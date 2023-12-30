@@ -7,8 +7,8 @@ from secrets import projects
 import copy
 
 load_dotenv()
-TEMPLATE_FOLDER = "./bigquery/templates"
-functions_directory = './bigquery/'
+TEMPLATE_FOLDER = "./justfunctions/bigquery/templates"
+functions_directory = './justfunctions/bigquery/'
 
 
 def get_keys(old_dict, selected_keys):

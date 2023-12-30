@@ -37,22 +37,21 @@ https://justdataplease.com/justfunctions-bigquery/
 1. Clone the repository and navigate to the root directory.
 2. Install the required Python packages:
     ```bash
-    pip install requirements.txt
+    pip install justfunctions/bigquery/requirements.txt
     ```
 
 3. Ensure you're authenticated with Google Cloud:
     ```bash
-    gcloud auth login
+    gcloud auth application-default login
     ```
 
 4. Make sure you have the necessary BigQuery configurations set in the `projects` variable in `bigquery.secrets.py`.
 
 ## Usage
-
 Run the main script:
 
 ```bash
-python bigquery/deploy.py
+python justfunctions/bigquery/deploy.py
 ```
 
 ✨ Explore the freshly deployed functions in BigQuery and refer to the locally-generated markdown documentation in functions_documentation.md! ✨
@@ -66,7 +65,7 @@ python bigquery/deploy.py
 4. Run the main script:
 
 ```bash
-python bigquery/deploy.py
+python justfunctions/bigquery/deploy.py
 ```
 
 ## BigQuery Functions Resources
