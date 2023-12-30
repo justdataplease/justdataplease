@@ -271,13 +271,13 @@ def run():
                    'statement', 'example_query', 'example_overview', 'example_output']
 
     data = process_documentation(documentation, doc_columns)
-    create_md_file(data)
+    create_md_file(data, filename='./justfunctions/bigquery/functions_documentation.md')
 
     # Write documentation for GPT
     doc_columns = ['title', 'slug', 'ftype', 'source', 'tutorial', 'tags', 'github', 'region', 'description',
                    'example_query', 'example_overview', 'example_output']
     data = process_documentation(documentation, doc_columns)
-    create_md_file(data, filename="functions_documentation_gpt.txt")
+    create_md_file(data, filename="./justfunctions/bigquery/functions_documentation_gpt.txt")
 
     print("Finished")
 
