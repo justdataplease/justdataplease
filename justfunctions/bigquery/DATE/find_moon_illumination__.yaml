@@ -4,7 +4,7 @@ category:
 tutorial:
 source: https://github.com/cosinekitty/astronomy
 github:
-description: "Helper function for `find_moon_illumination`."
+description: "Helper function for find_moon_illumination, using a <date_string>."
 arguments:
   - name: date_string
     type: STRING

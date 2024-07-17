@@ -1,8 +1,7 @@
 type: procedure
 category:
   - operations
-  - featured
-description: Creates a deduplicated version of <table>. It keeps the chronologically (`timestamp_column`) latest row of the `unique column` or uses other methods based on arguments availability. Arguments `timestamp_column`, `unique_column`, `output_table_suffix` are optional.
+description: "Creates a deduplicated version of the table <table_name>, retaining the latest row based on the <timestamp_column>, and outputs it with the suffix <output_table_suffix>. Arguments <timestamp_column>, <unique_column>, <output_table_suffix> are optional."
 arguments:
   - name: table_name
     type: string

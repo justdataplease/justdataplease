@@ -5,7 +5,7 @@ category:
 tutorial:
 source:
 github:
-description: "Extracts url suffix from <url>."
+description: "Extracts the URL suffix from a <url>."
 arguments:
   - name: url
     type: STRING

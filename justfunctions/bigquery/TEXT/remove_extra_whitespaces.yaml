@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Remove extra whitespaces in a `string`."
+description: "Removes extra whitespaces in a <string>."
 arguments:
   - name: string
     type: string

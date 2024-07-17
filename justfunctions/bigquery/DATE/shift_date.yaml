@@ -4,7 +4,7 @@ category:
 tutorial:
 source:
 github:
-description: "Shifts a <date> by adding or subtracting specified years, months, and days. Use minus (-) to subtract."
+description: "Shifts a <date> by adding or subtracting specified <years>, <months>, and <days>. Use a minus (-) to subtract."
 arguments:
   - name: date
     type: DATE

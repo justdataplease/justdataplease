@@ -2,11 +2,9 @@ type: function_sql
 category:
   - NLP
   - text
-  - new
-  - featured
 tutorial:
 public: true
-description: "Normalize given <string> by converting it to lowercase, applying transliteration, removing special characters and extra spaces."
+description: "Normalizes a given <string> by converting it to lowercase, applying transliteration, and removing special symbols."
 arguments:
   - name: string
     type: string

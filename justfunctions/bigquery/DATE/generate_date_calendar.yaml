@@ -2,9 +2,7 @@ type: procedure
 category:
   - operations
   - date
-  - featured
-  - new
-description: Generates a complete date calendar <table>.
+description: "Generates a complete date calendar table named <table_name> from <start_date> to <end_date>."
 arguments:
   - name: table_name
     type: string

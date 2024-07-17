@@ -5,7 +5,7 @@ category:
 tutorial:
 source:
 github:
-description: "Splits a <url> into parts, using '/' symbol."
+description: "Splits a <url> into parts using the '/' symbol."
 arguments:
   - name: url
     type: STRING

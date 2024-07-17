@@ -2,9 +2,7 @@ type: procedure
 category:
   - operations
   - date
-  - featured
-  - new
-description: Generates a hour calendar table for a 24-hour day.
+description: "Generates an hourly calendar table named <table_name> for a 24-hour day."
 arguments:
   - name: table_name
     type: string

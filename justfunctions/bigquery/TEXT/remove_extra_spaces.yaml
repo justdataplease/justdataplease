@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Remove extra spaces (tap,space,newline,paragraph etc) in a `string`."
+description: "Removes extra spaces (tab, space, newline, paragraph, etc.) in a <string>."
 arguments:
   - name: string
     type: string

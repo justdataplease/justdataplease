@@ -2,11 +2,10 @@ type: function_js
 category:
   - text
   - url
-  - new
 tutorial:
 source:
 github:
-description: "Extracts all parameters from <url> in JSON format."
+description: "Extracts all parameters from a <url> in JSON format."
 arguments:
   - name: url
     type: STRING

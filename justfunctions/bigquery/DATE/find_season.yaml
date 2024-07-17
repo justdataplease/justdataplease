@@ -1,11 +1,10 @@
 type: function_sql
 category:
   - date
-  - new
 tutorial:
 source:
 github:
-description: "Finds season name and start of season date for a given <date>."
+description: "Identifies the season name and the start date of the season for a given <date>."
 arguments:
   - name: date
     type: DATE

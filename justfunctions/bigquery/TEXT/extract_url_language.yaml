@@ -2,11 +2,10 @@ type: function_sql
 category:
   - text
   - url
-  - new
 tutorial:
 source:
 github:
-description: "Extract language from a <url>."
+description: "Extracts the language from a <url>."
 arguments:
   - name: url
     type: STRING

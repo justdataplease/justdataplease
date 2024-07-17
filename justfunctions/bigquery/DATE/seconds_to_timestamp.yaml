@@ -4,7 +4,7 @@ category:
 tutorial:
 source:
 github:
-description: "Converts the <seconds> to timestamp format '%Y-%m-%d %H:%M:%S'."
+description: "Converts <seconds> to timestamp format '%Y-%m-%d %H:%M:%S'."
 arguments:
   - name: seconds
     type: INT64

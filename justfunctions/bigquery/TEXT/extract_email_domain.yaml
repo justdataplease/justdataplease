@@ -5,7 +5,7 @@ category:
 tutorial:
 source:
 github:
-description: "Extract the domain of an <email>."
+description: "Extracts the domain from an <email>."
 arguments:
   - name: url
     type: STRING

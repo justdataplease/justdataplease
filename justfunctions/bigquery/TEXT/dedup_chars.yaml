@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Deduplicate characters in 'string`."
+description: "Deduplicates characters in a <string>."
 arguments:
   - name: string
     type: string

@@ -5,7 +5,7 @@ category:
 tutorial:
 source:
 github:
-description: "Extracts url tail from <url>."
+description: "Extracts the URL tail from a <url>."
 arguments:
   - name: url
     type: STRING

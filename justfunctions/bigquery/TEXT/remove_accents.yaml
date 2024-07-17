@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Remove accents from `string`."
+description: "Removes accents from a <string>."
 arguments:
   - name: string
     type: string

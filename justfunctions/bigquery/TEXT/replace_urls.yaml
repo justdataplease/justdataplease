@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Replace url patterns in a `string` with `replacement`."
+description: "Replaces URL patterns in a <string> with the specified <replacement>."
 arguments:
   - name: string
     type: string

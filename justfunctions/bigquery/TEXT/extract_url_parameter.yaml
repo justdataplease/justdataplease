@@ -2,11 +2,10 @@ type: function_sql
 category:
   - text
   - url
-  - new
 tutorial:
 source:
 github:
-description: "Extracts parameter value from <url>."
+description: "Extracts the value of a specified <parameter> from a <url>."
 arguments:
   - name: url
     type: STRING

@@ -5,7 +5,7 @@ category:
 tutorial:
 source: https://stackoverflow.com/questions/13831391/bigquery-url-decode/
 github:
-description: "Decodes <url>."
+description: "Decodes a <url>."
 arguments:
   - name: url
     type: STRING

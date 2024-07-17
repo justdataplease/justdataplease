@@ -2,11 +2,10 @@ type: function_sql
 category:
   - text
   - useragent
-  - new
 tutorial:
 source:
 github:
-description: "Detects UserAgent device type from <useragent>. It can be table,mobile,pc,tv or other."
+description: "Detects the device type from a <useragent> string. It can be a tablet, mobile, PC, TV, or other."
 arguments:
   - name: useragent
     type: STRING

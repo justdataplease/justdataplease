@@ -4,7 +4,7 @@ category:
   - percentile
 source:
 public: true
-description: "Find percentile of 'array'."
+description: "Finds the specified <percentile> of an array <arr>."
 arguments:
   - name: arr
     type: array<float64>

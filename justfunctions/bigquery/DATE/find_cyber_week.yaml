@@ -1,11 +1,10 @@
 type: function_sql
 category:
   - date
-  - new
 tutorial:
 source:
 github:
-description: "Finds if a <date> fall into cyber week as well as the name of the day (Thanksgiving, Black Friday, Thanksgiving Weekend, Cyber Monday)."
+description: "Determines if a <date> falls within Cyber Week and identifies the specific day (e.g., Thanksgiving, Black Friday)."
 arguments:
   - name: date
     type: DATE

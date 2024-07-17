@@ -2,11 +2,10 @@ type: function_js
 category:
   - operations
   - text
-  - new
 tutorial:
 source:
 github:
-description: "Converts YAML <string> to JSON."
+description: "Converts a YAML <string> to JSON format."
 arguments:
   - name: string
     type: string

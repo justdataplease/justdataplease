@@ -2,11 +2,10 @@ type: function_sql
 category:
   - text
   - email
-  - new
 tutorial:
 source: https://www.reddit.com/r/bigquery/comments/dshge0/udf_for_email_validation/
 github:
-description: "Detects if <email> is valid."
+description: "Validates if an <email> address is properly formatted."
 arguments:
   - name: email
     type: STRING

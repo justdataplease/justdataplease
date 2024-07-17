@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Perform channel attribution from source, medium and campaign name."
+description: "Performs channel attribution using the <source>, <medium>, and <campaign_name>."
 arguments:
   - name: source
     type: string

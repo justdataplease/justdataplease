@@ -1,13 +1,11 @@
 type: function_sql
 category:
   - text
-  - new
   - url
-  - featured
 tutorial:
 source:
 github:
-description: "Removes http/ftp/https:// and url tail and last url slash from a <url>."
+description: "Removes http://, ftp://, https://, the URL tail, and the last URL slash from a <url>."
 arguments:
   - name: url
     type: STRING

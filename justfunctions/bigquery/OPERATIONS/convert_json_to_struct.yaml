@@ -2,11 +2,10 @@ type: function_js
 category:
   - operations
   - text
-  - new
 tutorial:
 source:
 github:
-description: "Converts JSON <string> to STRUCT."
+description: "Converts a JSON <string> to a STRUCT data type."
 arguments:
   - name: string
     type: string

@@ -7,7 +7,7 @@ tutorial: https://medium.com/mlearning-ai/extend-bigquery-nlp-armory-with-stemme
 source: https://github.com/Apmats/greekstemmerjs
 github: https://github.com/justdataplease/bigquery-stemmers
 public: true
-description: "Returns the stem of the `string`. Supports Greek Language."
+description: "Returns the stem of a <string>. Supports the Greek language."
 arguments:
   - name: string
     type: string

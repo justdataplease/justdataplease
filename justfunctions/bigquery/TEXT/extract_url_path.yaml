@@ -2,11 +2,10 @@ type: function_sql
 category:
   - text
   - url
-  - featured
 tutorial:
 source:
 github:
-description: "Extracts url path from <url>. Optionally remove url tail."
+description: "Extracts the URL path from a <url>, optionally removing the URL tail."
 arguments:
   - name: url
     type: STRING
@@ -27,7 +26,7 @@ examples:
     region: ALL
 code: |
   CASE WHEN clean_url_tail THEN 
-    SPLIT(SPLIT(url,NET.HOST(url))[SAFE_OFFSET(1)],'?')[SAFE_OFFSET(0)]
+    SPLIT(SPLIT(SPLIT(url,NET.HOST(url))[SAFE_OFFSET(1)],'?')[SAFE_OFFSET(0)],'#')[SAFE_OFFSET(0)]
   ELSE
     SPLIT(url,NET.HOST(url))[SAFE_OFFSET(1)]
   END

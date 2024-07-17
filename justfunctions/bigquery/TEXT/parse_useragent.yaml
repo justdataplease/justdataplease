@@ -2,11 +2,10 @@ type: function_js
 category:
   - text
   - useragent
-  - new
 tutorial:
 source:
 github:
-description: "Parses UserAgent details from <useragent>."
+description: "Parses the details from a <useragent> string."
 arguments:
   - name: useragent
     type: STRING

@@ -4,7 +4,7 @@ category:
 tutorial:
 source:
 github:
-description: "Converts the <timestamp> to string '%Y-%m-%d %H:%M:%S'."
+description: "Converts a <timestamp> to string format '%Y-%m-%d %H:%M:%S'."
 arguments:
   - name: timestamp
     type: TIMESTAMP

@@ -1,11 +1,9 @@
 type: function_sql
 category:
   - operations
-  - new
-  - featured
 tutorial:
 source: https://github.com/dbt-labs/dbt-core/issues/1082
-description: Generates a DBT schema.yml using the information_schema of the generated tables.
+description: "Generates a DBT schema.yml using the information_schema of the generated tables for the specified <project_id> and <dataset_id>. For this function to work you need to create your own function in your dataset."
 arguments:
   - name: project_id
     type: string

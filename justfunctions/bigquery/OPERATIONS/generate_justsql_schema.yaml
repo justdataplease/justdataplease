@@ -1,11 +1,9 @@
 type: procedure
 category:
   - operations
-  - new
-  - featured
 tutorial: https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery
 source: https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery
-description: Generates a JSON schema to use with JustSQL GPT (https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery).
+description: "Generates a JSON schema for use with JustSQL GPT using the specified <project_id>, <dataset_id>, and list of <tables> (https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery)."
 arguments:
   - name: project_id
     type: string

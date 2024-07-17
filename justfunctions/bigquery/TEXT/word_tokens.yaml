@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Splits 'string' into words."
+description: "Splits a <string> into words using the specified <symbol>."
 arguments:
   - name: string
     type: string

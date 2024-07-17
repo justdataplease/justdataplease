@@ -7,7 +7,7 @@ tutorial: https://medium.com/mlearning-ai/extend-bigquery-nlp-armory-with-stemme
 source: https://github.com/Yomguithereal/talisman
 github: https://github.com/justdataplease/bigquery-stemmers
 public: true
-description: "Returns the stem of the `string`, using Porter Algorythm. Supports English Language."
+description: "Returns the stem of a <string> using the Porter algorithm. Supports the English language."
 arguments:
   - name: string
     type: string

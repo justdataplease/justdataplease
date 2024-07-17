@@ -2,9 +2,7 @@ type: procedure
 category:
   - operations
   - date
-  - featured
-  - new
-description: Generates a complete date calendar <table> with holidays (holidays python) for a given country and special days. Holidays are available for 2000-2100.
+description: "Generates a complete date calendar table named <table_name> with holidays for the specified <country>, from <start_date> to <end_date>. Holidays are available between 2000-2100."
 arguments:
   - name: table_name
     type: string

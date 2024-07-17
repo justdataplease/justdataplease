@@ -5,7 +5,7 @@ category:
 tutorial:
 source:
 github:
-description: "Extracts url prefix from <url>."
+description: "Extracts the URL prefix from a <url>."
 arguments:
   - name: url
     type: STRING

@@ -4,7 +4,7 @@ category:
   - text
 source:
 public: true
-description: "Replace html tags in a `string` with `replacement`"
+description: "Replaces HTML tags in a <string> with the specified <replacement>."
 arguments:
   - name: string
     type: string

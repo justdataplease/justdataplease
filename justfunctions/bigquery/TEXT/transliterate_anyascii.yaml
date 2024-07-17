@@ -7,7 +7,7 @@ tutorial:
 source: https://github.com/anyascii/anyascii
 github: https://github.com/justdataplease/bigquery-transliteration
 public: true
-description: "Converts Unicode characters to their best ASCII representation."
+description: "Converts Unicode characters in a <string> to their best ASCII representation."
 arguments:
   - name: string
     type: string

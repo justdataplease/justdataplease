@@ -5,7 +5,7 @@ category:
 tutorial:
 source:
 github:
-description: "Removes any sub-address (also known as plus addressing) from the <email>."
+description: " any sub-address (also known as plus addressing) from an <email> address."
 arguments:
   - name: email
     type: STRING
