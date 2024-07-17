@@ -15,56 +15,58 @@
 12. [timestamp_to_string(timestamp)](#timestamp_to_string)
 13. [convert_json_to_struct(string)](#convert_json_to_struct)
 14. [dedup_table(table_name, timestamp_column, unique_column, output_table_suffix)](#dedup_table)
-15. [generate_date_calendar(table_name, start_date, end_date)](#generate_date_calendar)
-16. [generate_dbt_yml_schema(project_id, dataset_id)](#generate_dbt_yml_schema)
-17. [generate_justsql_schema(project_id, dataset_id, tables)](#generate_justsql_schema)
-18. [parse_yaml(string)](#parse_yaml)
-19. [detect_outlier_iqr(value, value_percentile_25, value_percentile_75)](#detect_outlier_iqr)
-20. [percentile(arr, percentile)](#percentile)
-21. [clean_email(email)](#clean_email)
-22. [clean_special_symbols(string)](#clean_special_symbols)
-23. [clean_special_symbols_custom(string)](#clean_special_symbols_custom)
-24. [clean_url(url)](#clean_url)
-25. [decode_url(url)](#decode_url)
-26. [dedup_chars(string)](#dedup_chars)
-27. [detect_department_email(email)](#detect_department_email)
-28. [detect_free_email(email)](#detect_free_email)
-29. [detect_free_email_domain(email_domain)](#detect_free_email_domain)
-30. [detect_useragent_device_type(useragent)](#detect_useragent_device_type)
-31. [extract_all_url_parameters(url)](#extract_all_url_parameters)
-32. [extract_email_domain(url)](#extract_email_domain)
-33. [extract_email_domain_base(url)](#extract_email_domain_base)
-34. [extract_url_domain(url)](#extract_url_domain)
-35. [extract_url_domain_base(url)](#extract_url_domain_base)
-36. [extract_url_language(url)](#extract_url_language)
-37. [extract_url_parameter(url, parameter)](#extract_url_parameter)
-38. [extract_url_path(url, clean_url_tail)](#extract_url_path)
-39. [extract_url_prefix(url)](#extract_url_prefix)
-40. [extract_url_suffix(url)](#extract_url_suffix)
-41. [extract_url_tail(url)](#extract_url_tail)
-42. [fuzzy_distance_dam(string_1, string_2)](#fuzzy_distance_dam)
-43. [fuzzy_distance_leven(string_1, string_2)](#fuzzy_distance_leven)
-44. [fuzzy_nysiis(string)](#fuzzy_nysiis)
-45. [normalize_text(string)](#normalize_text)
-46. [parse_useragent(useragent)](#parse_useragent)
-47. [remove_accents(string)](#remove_accents)
-48. [remove_email_plus_address(email)](#remove_email_plus_address)
-49. [remove_en_stopwords(string)](#remove_en_stopwords)
-50. [remove_extra_spaces(string)](#remove_extra_spaces)
-51. [remove_extra_whitespaces(string)](#remove_extra_whitespaces)
-52. [replace_en_contractions(string, replacement)](#replace_en_contractions)
-53. [replace_html_tags(string, replacement)](#replace_html_tags)
-54. [replace_urls(string, replacement)](#replace_urls)
-55. [split_url(url, part)](#split_url)
-56. [stemmer_greek(string)](#stemmer_greek)
-57. [stemmer_lancaster(string)](#stemmer_lancaster)
-58. [stemmer_porter(string)](#stemmer_porter)
-59. [surrogate_key(string)](#surrogate_key)
-60. [surrogate_key_str(string)](#surrogate_key_str)
-61. [transliterate_anyascii(string)](#transliterate_anyascii)
-62. [validate_email(email)](#validate_email)
-63. [word_distance(string_1, string_2)](#word_distance)
-64. [word_tokens(string, symbol)](#word_tokens)
+15. [generate_dbt_yml_schema(project_id, dataset_id)](#generate_dbt_yml_schema)
+16. [generate_justsql_schema(project_id, dataset_id, tables)](#generate_justsql_schema)
+17. [greatest_not_null(arr)](#greatest_not_null)
+18. [least_not_null(arr)](#least_not_null)
+19. [parse_yaml(string)](#parse_yaml)
+20. [safe_least(x, y)](#safe_least)
+21. [detect_outlier_iqr(value, value_percentile_25, value_percentile_75)](#detect_outlier_iqr)
+22. [percentile(arr, percentile)](#percentile)
+23. [clean_email(email)](#clean_email)
+24. [clean_special_symbols(string)](#clean_special_symbols)
+25. [clean_special_symbols_custom(string)](#clean_special_symbols_custom)
+26. [clean_url(url)](#clean_url)
+27. [decode_url(url)](#decode_url)
+28. [dedup_chars(string)](#dedup_chars)
+29. [detect_department_email(email)](#detect_department_email)
+30. [detect_free_email(email)](#detect_free_email)
+31. [detect_free_email_domain(email_domain)](#detect_free_email_domain)
+32. [detect_useragent_device_type(useragent)](#detect_useragent_device_type)
+33. [extract_all_url_parameters(url)](#extract_all_url_parameters)
+34. [extract_email_domain(url)](#extract_email_domain)
+35. [extract_email_domain_base(url)](#extract_email_domain_base)
+36. [extract_url_domain(url)](#extract_url_domain)
+37. [extract_url_domain_base(url)](#extract_url_domain_base)
+38. [extract_url_language(url)](#extract_url_language)
+39. [extract_url_parameter(url, parameter)](#extract_url_parameter)
+40. [extract_url_path(url, clean_url_tail)](#extract_url_path)
+41. [extract_url_prefix(url)](#extract_url_prefix)
+42. [extract_url_suffix(url)](#extract_url_suffix)
+43. [extract_url_tail(url)](#extract_url_tail)
+44. [fuzzy_distance_dam(string_1, string_2)](#fuzzy_distance_dam)
+45. [fuzzy_distance_leven(string_1, string_2)](#fuzzy_distance_leven)
+46. [fuzzy_nysiis(string)](#fuzzy_nysiis)
+47. [normalize_text(string)](#normalize_text)
+48. [parse_useragent(useragent)](#parse_useragent)
+49. [remove_accents(string)](#remove_accents)
+50. [remove_email_plus_address(email)](#remove_email_plus_address)
+51. [remove_en_stopwords(string)](#remove_en_stopwords)
+52. [remove_extra_spaces(string)](#remove_extra_spaces)
+53. [remove_extra_whitespaces(string)](#remove_extra_whitespaces)
+54. [replace_en_contractions(string, replacement)](#replace_en_contractions)
+55. [replace_html_tags(string, replacement)](#replace_html_tags)
+56. [replace_urls(string, replacement)](#replace_urls)
+57. [split_url(url, part)](#split_url)
+58. [stemmer_greek(string)](#stemmer_greek)
+59. [stemmer_lancaster(string)](#stemmer_lancaster)
+60. [stemmer_porter(string)](#stemmer_porter)
+61. [surrogate_key(string)](#surrogate_key)
+62. [surrogate_key_str(string)](#surrogate_key_str)
+63. [transliterate_anyascii(string)](#transliterate_anyascii)
+64. [validate_email(email)](#validate_email)
+65. [word_distance(string_1, string_2)](#word_distance)
+66. [word_tokens(string, symbol)](#word_tokens)
 
 ---
 ## <a id='channel_attribution'></a>1. channel_attribution(source, medium, campaign_name)
@@ -72,7 +74,7 @@
 - **Type**: SQL
 - **Tags**: analytics, text
 - **Region**: us,eu
-- **Description**: Perform channel attribution from source, medium and campaign name.
+- **Description**: Performs channel attribution using the <source>, <medium>, and <campaign_name>.
 
 **Example Query**:
 
@@ -89,9 +91,9 @@ paid shopping
 ## <a id='find_cyber_week'></a>2. find_cyber_week(date)
 
 - **Type**: SQL
-- **Tags**: date, new
+- **Tags**: date
 - **Region**: us,eu
-- **Description**: Finds if a <date> fall into cyber week as well as the name of the day (Thanksgiving, Black Friday, Thanksgiving Weekend, Cyber Monday).
+- **Description**: Determines if a <date> falls within Cyber Week and identifies the specific day (e.g., Thanksgiving, Black Friday).
 
 **Example Query**:
 
@@ -108,9 +110,9 @@ SELECT `justfunctions.eu.find_cyber_week`("2023-11-24")
 ## <a id='find_moon_illumination'></a>3. find_moon_illumination(date)
 
 - **Type**: SQL
-- **Tags**: date, new
+- **Tags**: date
 - **Region**: us,eu
-- **Description**: Finds how bright the Moon is at a specific <date> or better the fraction or percentage of the Moon's visible surface that is illuminated by the Sun at a specific <date>. For example, during a full moon, the illumination is near 100, while during a new moon, it is close to 0
+- **Description**: Calculates the Moon's illumination on a specific <date>, expressed as a fraction or percentage. For example, during a full moon, the illumination is near 100, while during a new moon, it is close to 0
 
 **Example Query**:
 
@@ -129,7 +131,7 @@ SELECT `justfunctions.eu.find_moon_illumination`("2090-01-16")
 - **Type**: JS
 - **Tags**: date
 - **Region**: us,eu
-- **Description**: Helper function for `find_moon_illumination`.
+- **Description**: Helper function for find_moon_illumination, using a <date_string>.
 
 **Example Query**:
 
@@ -146,9 +148,9 @@ SELECT `justfunctions.eu.find_moon_illumination__`("2090-01-16")
 ## <a id='find_season'></a>5. find_season(date)
 
 - **Type**: SQL
-- **Tags**: date, new
+- **Tags**: date
 - **Region**: us,eu
-- **Description**: Finds season name and start of season date for a given <date>.
+- **Description**: Identifies the season name and the start date of the season for a given <date>.
 
 **Example Query**:
 
@@ -165,9 +167,9 @@ Winter | 2019-12-01
 ## <a id='generate_date_calendar'></a>6. generate_date_calendar(table_name, start_date, end_date)
 
 - **Type**: PROCEDURE
-- **Tags**: operations, date, featured, new
+- **Tags**: operations, date
 - **Region**: us,eu
-- **Description**: Generates a complete date calendar <table>.
+- **Description**: Generates a complete date calendar table named <table_name> from <start_date> to <end_date>.
 
 **Example Query**:
 
@@ -224,9 +226,9 @@ CALL `justfunctions.eu.generate_date_calendar`("justfunctions.test.date_calendar
 ## <a id='generate_date_calendar_with_holidays'></a>7. generate_date_calendar_with_holidays(table_name, start_date, end_date, country)
 
 - **Type**: PROCEDURE
-- **Tags**: operations, date, featured, new
+- **Tags**: operations, date
 - **Region**: us,eu
-- **Description**: Generates a complete date calendar <table> with holidays (holidays python) for a given country and special days. Holidays are available for 2000-2100.
+- **Description**: Generates a complete date calendar table named <table_name> with holidays for the specified <country>, from <start_date> to <end_date>. Holidays are available between 2000-2100.
 
 **Example Query**:
 
@@ -286,9 +288,9 @@ CALL `justfunctions.eu.generate_date_calendar_with_holidays`("justfunctions.test
 ## <a id='generate_hour_calendar'></a>8. generate_hour_calendar(table_name)
 
 - **Type**: PROCEDURE
-- **Tags**: operations, date, featured, new
+- **Tags**: operations, date
 - **Region**: us,eu
-- **Description**: Generates a hour calendar table for a 24-hour day.
+- **Description**: Generates an hourly calendar table named <table_name> for a 24-hour day.
 
 **Example Query**:
 
@@ -313,7 +315,7 @@ CALL `justfunctions.eu.generate_hour_calendar`("justfunctions.test.hour_calendar
 - **Type**: SQL
 - **Tags**: date
 - **Region**: us,eu
-- **Description**: Converts the <seconds> to date format '%Y-%m-%d'.
+- **Description**: Converts <seconds> to date format '%Y-%m-%d'.
 
 **Example Query**:
 
@@ -332,7 +334,7 @@ SELECT `justfunctions.eu.seconds_to_date`("1687613655")
 - **Type**: SQL
 - **Tags**: date
 - **Region**: us,eu
-- **Description**: Converts the <seconds> to timestamp format '%Y-%m-%d %H:%M:%S'.
+- **Description**: Converts <seconds> to timestamp format '%Y-%m-%d %H:%M:%S'.
 
 **Example Query**:
 
@@ -351,7 +353,7 @@ SELECT `justfunctions.eu.seconds_to_timestamp`("1687613655")
 - **Type**: SQL
 - **Tags**: date
 - **Region**: us,eu
-- **Description**: Shifts a <date> by adding or subtracting specified years, months, and days. Use minus (-) to subtract.
+- **Description**: Shifts a <date> by adding or subtracting specified <years>, <months>, and <days>. Use a minus (-) to subtract.
 
 **Example Query**:
 
@@ -370,7 +372,7 @@ SELECT `justfunctions.eu.shift_date`("2023-01-01","-2","1","4")
 - **Type**: SQL
 - **Tags**: date
 - **Region**: us,eu
-- **Description**: Converts the <timestamp> to string '%Y-%m-%d %H:%M:%S'.
+- **Description**: Converts a <timestamp> to string format '%Y-%m-%d %H:%M:%S'.
 
 **Example Query**:
 
@@ -387,9 +389,9 @@ SELECT `justfunctions.eu.timestamp_to_string`("2023-06-24 13:01:02 UTC")
 ## <a id='convert_json_to_struct'></a>13. convert_json_to_struct(string)
 
 - **Type**: JS
-- **Tags**: operations, text, new
+- **Tags**: operations, text
 - **Region**: us,eu
-- **Description**: Converts JSON <string> to STRUCT.
+- **Description**: Converts a JSON <string> to a STRUCT data type.
 
 **Example Query**:
 
@@ -408,9 +410,9 @@ SELECT `justfunctions.eu.convert_json_to_struct`("{'time': {'new_value': '17:00'
 ## <a id='dedup_table'></a>14. dedup_table(table_name, timestamp_column, unique_column, output_table_suffix)
 
 - **Type**: PROCEDURE
-- **Tags**: operations, featured
+- **Tags**: operations
 - **Region**: us,eu
-- **Description**: Creates a deduplicated version of <table>. It keeps the chronologically (`timestamp_column`) latest row of the `unique column` or uses other methods based on arguments availability. Arguments `timestamp_column`, `unique_column`, `output_table_suffix` are optional.
+- **Description**: Creates a deduplicated version of the table <table_name>, retaining the latest row based on the <timestamp_column>, and outputs it with the suffix <output_table_suffix>. Arguments <timestamp_column>, <unique_column>, <output_table_suffix> are optional.
 
 **Example Query**:
 
@@ -424,68 +426,12 @@ CALL `justfunctions.eu.dedup_table`("your_project.your_dataset.your_table","crea
 your_project.your_dataset.your_table.your_table_dedup
 ```
 ---
-## <a id='generate_date_calendar'></a>15. generate_date_calendar(table_name, start_date, end_date)
-
-- **Type**: PROCEDURE
-- **Tags**: operations, date, featured, new
-- **Region**: us,eu
-- **Description**: Generates a complete date calendar <table>.
-
-**Example Query**:
-
-```sql
-CALL `justfunctions.eu.generate_date_calendar`("justfunctions.test.date_calendar","2020-01-01","2023-01-01")
-```
-
-**Example Output**:
-
-```
-- date_id: 20200101
-- date: 2020-01-01
-- epoch: 1577836800
-- day_suffix: 1th
-- day_name: Wednesday
-- day_name_abbr: Wed
-- day_of_week: 4
-- day_of_month: 1
-- day_of_quarter: 1
-- day_of_year: 1
-- week_of_month: 1
-- week_of_year: 1
-- week_of_year_iso: 2020-W01-3
-- month: 1
-- month_name: January
-- month_name_abbr: Jan
-- quarter: 1
-- quarter_name: Q1
-- year: 2020
-- start_of_week: 2019-12-30
-- start_of_week_saturday: 2019-12-28
-- start_of_month: 2020-01-01
-- mid_of_month: 2020-01-15
-- start_of_quarter: 2020-01-01
-- start_of_year: 2020-01-01
-- end_of_week: 2020-01-03
-- end_of_month: 2020-01-31
-- end_of_quarter: 2020-03-31
-- end_of_year: 2020-12-31
-- start_of_fiscal_year: 2019-10-01
-- end_of_fiscal_year: 2020-09-30
-- yyyymm: 202001
-- yyyymmdd: 20200101
-- month_desc: 2020-Jan
-- quarter_desc: 2020-Q1
-- week_desc: 2020-W1
-- is_weekend: FALSE
-
-```
----
-## <a id='generate_dbt_yml_schema'></a>16. generate_dbt_yml_schema(project_id, dataset_id)
+## <a id='generate_dbt_yml_schema'></a>15. generate_dbt_yml_schema(project_id, dataset_id)
 
 - **Type**: SQL
-- **Tags**: operations, new, featured
+- **Tags**: operations
 - **Region**: us,eu
-- **Description**: Generates a DBT schema.yml using the information_schema of the generated tables.
+- **Description**: Generates a DBT schema.yml using the information_schema of the generated tables for the specified <project_id> and <dataset_id>. For this function to work you need to create your own function in your dataset.
 
 **Example Query**:
 
@@ -500,12 +446,12 @@ version: 2
 models: - name: country_distinct columns: - name: service_country - name: official_name - name: alpha_2 
 ```
 ---
-## <a id='generate_justsql_schema'></a>17. generate_justsql_schema(project_id, dataset_id, tables)
+## <a id='generate_justsql_schema'></a>16. generate_justsql_schema(project_id, dataset_id, tables)
 
 - **Type**: PROCEDURE
-- **Tags**: operations, new, featured
+- **Tags**: operations
 - **Region**: us,eu
-- **Description**: Generates a JSON schema to use with JustSQL GPT (https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery).
+- **Description**: Generates a JSON schema for use with JustSQL GPT using the specified <project_id>, <dataset_id>, and list of <tables> (https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery).
 
 **Example Query**:
 
@@ -519,12 +465,50 @@ CALL `justfunctions.eu.generate_justsql_schema`("justfunctions","eu","['date_cal
 { "tables": [{ "table_name": "justfunctions.eu.date_calendar", "columns": [{ "name": "date","type":"DATE"},{ "name": "Quarter","type":"STRING"},{ "name": "month_name","type":"STRING"},{ "name": "epoch","type":"INT64"},{ "name": "date_id","type":"INT64"},{ "name": "day_of_month","type":"INT64"},{ "name": "day_suffix","type":"STRING"}] }] }
 ```
 ---
-## <a id='parse_yaml'></a>18. parse_yaml(string)
+## <a id='greatest_not_null'></a>17. greatest_not_null(arr)
+
+- **Type**: SQL
+- **Tags**: operations
+- **Region**: us,eu
+- **Description**: This SQL function returns the greatest (maximum) value among multiple columns in the array <arr>, while properly handling NULL values.
+
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.greatest_not_null`("['col_1', 'col_2', 'col_3']")
+```
+
+**Example Output**:
+
+```
+1
+```
+---
+## <a id='least_not_null'></a>18. least_not_null(arr)
+
+- **Type**: SQL
+- **Tags**: operations
+- **Region**: us,eu
+- **Description**: This SQL function returns the least (minimum) value among multiple columns in the array <arr>, while properly handling NULL values.
+
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.least_not_null`("['col_1', 'col_2', 'col_3']")
+```
+
+**Example Output**:
+
+```
+1
+```
+---
+## <a id='parse_yaml'></a>19. parse_yaml(string)
 
 - **Type**: JS
-- **Tags**: operations, text, new
+- **Tags**: operations, text
 - **Region**: us,eu
-- **Description**: Converts YAML <string> to JSON.
+- **Description**: Converts a YAML <string> to JSON format.
 
 **Example Query**:
 
@@ -538,12 +522,31 @@ SELECT `justfunctions.eu.parse_yaml`("--- updated_at: - 2023-11-12 08:08:25.2917
 {'status': ['new', 'canceled'], 'updated_at': ['2023-11-12T08:08:25.291Z', '2023-11-12T08:25:18.648Z']}
 ```
 ---
-## <a id='detect_outlier_iqr'></a>19. detect_outlier_iqr(value, value_percentile_25, value_percentile_75)
+## <a id='safe_least'></a>20. safe_least(x, y)
+
+- **Type**: SQL
+- **Tags**: operations
+- **Region**: us,eu
+- **Description**: Safely compares two values <x> and <y> and returns the lesser of the two while properly handling NULL values.
+
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.safe_least`("1","None")
+```
+
+**Example Output**:
+
+```
+1
+```
+---
+## <a id='detect_outlier_iqr'></a>21. detect_outlier_iqr(value, value_percentile_25, value_percentile_75)
 
 - **Type**: SQL
 - **Tags**: STATISTICS
 - **Region**: us,eu
-- **Description**: Detects if <value> is an outlier based on IQR method.
+- **Description**: Detects if a <value> is an outlier based on the IQR method, using the 25th percentile <value_percentile_25> and 75th percentile <value_percentile_75>.
 
 **Example Query**:
 
@@ -557,12 +560,12 @@ SELECT `justfunctions.eu.detect_outlier_iqr`("5","2","14")
 0
 ```
 ---
-## <a id='percentile'></a>20. percentile(arr, percentile)
+## <a id='percentile'></a>22. percentile(arr, percentile)
 
 - **Type**: SQL
 - **Tags**: STATISTICS, percentile
 - **Region**: us,eu
-- **Description**: Find percentile of 'array'.
+- **Description**: Finds the specified <percentile> of an array <arr>.
 
 **Example Query**:
 
@@ -576,12 +579,12 @@ SELECT `justfunctions.eu.percentile`("[1.2, 2.3, 3.2, 4.2, 5]")
 3.2
 ```
 ---
-## <a id='clean_email'></a>21. clean_email(email)
+## <a id='clean_email'></a>23. clean_email(email)
 
 - **Type**: SQL
-- **Tags**: text, email, featured
+- **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Converts the <email> to lowercase and removes any sub-address (also known as plus addressing) if present.
+- **Description**: Converts an <email> address to lowercase and removes any sub-address (also known as plus addressing).
 
 **Example Query**:
 
@@ -595,12 +598,12 @@ SELECT `justfunctions.eu.clean_email`("HeLLo+other@gmail.com")
 hello@gmail.com
 ```
 ---
-## <a id='clean_special_symbols'></a>22. clean_special_symbols(string)
+## <a id='clean_special_symbols'></a>24. clean_special_symbols(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Clean special symbols in a `string` using custom symbols.
+- **Description**: Cleans special symbols in a <string> using custom symbols.
 
 **Example Query**:
 
@@ -614,12 +617,12 @@ SELECT `justfunctions.eu.clean_special_symbols`("Vacation✈️ time!🌴😀�
 vacation time
 ```
 ---
-## <a id='clean_special_symbols_custom'></a>23. clean_special_symbols_custom(string)
+## <a id='clean_special_symbols_custom'></a>25. clean_special_symbols_custom(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Clean special symbols in a `string` using custom symbols.
+- **Description**: Cleans special symbols in a <string> using custom symbols.
 
 **Example Query**:
 
@@ -633,12 +636,12 @@ SELECT `justfunctions.eu.clean_special_symbols_custom`("Vacation✈️ time!🌴
 vacation time
 ```
 ---
-## <a id='clean_url'></a>24. clean_url(url)
+## <a id='clean_url'></a>26. clean_url(url)
 
 - **Type**: SQL
-- **Tags**: text, new, url, featured
+- **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Removes http/ftp/https:// and url tail and last url slash from a <url>.
+- **Description**: Removes http://, ftp://, https://, the URL tail, and the last URL slash from a <url>.
 
 **Example Query**:
 
@@ -652,12 +655,12 @@ SELECT `justfunctions.eu.clean_url`("https://hey.com/me/?231#213")
 hey.com/me
 ```
 ---
-## <a id='decode_url'></a>25. decode_url(url)
+## <a id='decode_url'></a>27. decode_url(url)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Decodes <url>.
+- **Description**: Decodes a <url>.
 
 **Example Query**:
 
@@ -671,12 +674,12 @@ SELECT `justfunctions.eu.decode_url`("https%3A%2F%2Fjustdataplease.com%2Fjustfun
 https://justdataplease.com/justfunctions-bigquery/?utm_campaign=test
 ```
 ---
-## <a id='dedup_chars'></a>26. dedup_chars(string)
+## <a id='dedup_chars'></a>28. dedup_chars(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Deduplicate characters in 'string`.
+- **Description**: Deduplicates characters in a <string>.
 
 **Example Query**:
 
@@ -690,12 +693,12 @@ SELECT `justfunctions.eu.dedup_chars`("Helloooo!")
 Helo!
 ```
 ---
-## <a id='detect_department_email'></a>27. detect_department_email(email)
+## <a id='detect_department_email'></a>29. detect_department_email(email)
 
 - **Type**: SQL
 - **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Detects if an <email> belongs to a business department (sales, hr, support etc).
+- **Description**: Detects if an <email> belongs to a business department (e.g., sales, HR, support).
 
 **Example Query**:
 
@@ -709,12 +712,12 @@ SELECT `justfunctions.eu.detect_department_email`("sales@dev.io")
 1
 ```
 ---
-## <a id='detect_free_email'></a>28. detect_free_email(email)
+## <a id='detect_free_email'></a>30. detect_free_email(email)
 
 - **Type**: SQL
-- **Tags**: text, email, new, featured
+- **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Detects if <email> belongs to a free email service (gmail, yahoo, outlook, etc).
+- **Description**: Detects if an <email> belongs to a free email service (e.g., Gmail, Yahoo, Outlook).
 
 **Example Query**:
 
@@ -728,12 +731,12 @@ SELECT `justfunctions.eu.detect_free_email`("jason@gmail.com")
 1
 ```
 ---
-## <a id='detect_free_email_domain'></a>29. detect_free_email_domain(email_domain)
+## <a id='detect_free_email_domain'></a>31. detect_free_email_domain(email_domain)
 
 - **Type**: SQL
 - **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Detects if <email_domain> belongs to a free email service (gmail, yahoo, outlook, etc).
+- **Description**: Detects if an <email_domain> belongs to a free email service (e.g., Gmail, Yahoo, Outlook).
 
 **Example Query**:
 
@@ -747,12 +750,12 @@ SELECT `justfunctions.eu.detect_free_email_domain`("gmail")
 1
 ```
 ---
-## <a id='detect_useragent_device_type'></a>30. detect_useragent_device_type(useragent)
+## <a id='detect_useragent_device_type'></a>32. detect_useragent_device_type(useragent)
 
 - **Type**: SQL
-- **Tags**: text, useragent, new
+- **Tags**: text, useragent
 - **Region**: us,eu
-- **Description**: Detects UserAgent device type from <useragent>. It can be table,mobile,pc,tv or other.
+- **Description**: Detects the device type from a <useragent> string. It can be a tablet, mobile, PC, TV, or other.
 
 **Example Query**:
 
@@ -766,12 +769,12 @@ SELECT `justfunctions.eu.detect_useragent_device_type`("Mozilla/5.0 (iPad; CPU O
 tablet
 ```
 ---
-## <a id='extract_all_url_parameters'></a>31. extract_all_url_parameters(url)
+## <a id='extract_all_url_parameters'></a>33. extract_all_url_parameters(url)
 
 - **Type**: JS
-- **Tags**: text, url, new
+- **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extracts all parameters from <url> in JSON format.
+- **Description**: Extracts all parameters from a <url> in JSON format.
 
 **Example Query**:
 
@@ -785,12 +788,12 @@ SELECT `justfunctions.eu.extract_all_url_parameters`("justdataplease.com/test/?m
 {"keyword":"hey","medium":"cpc","source":"facebook"}
 ```
 ---
-## <a id='extract_email_domain'></a>32. extract_email_domain(url)
+## <a id='extract_email_domain'></a>34. extract_email_domain(url)
 
 - **Type**: SQL
 - **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Extract the domain of an <email>.
+- **Description**: Extracts the domain from an <email>.
 
 **Example Query**:
 
@@ -804,12 +807,12 @@ SELECT `justfunctions.eu.extract_email_domain`("jason@justdataplease.com")
 justdataplease.com
 ```
 ---
-## <a id='extract_email_domain_base'></a>33. extract_email_domain_base(url)
+## <a id='extract_email_domain_base'></a>35. extract_email_domain_base(url)
 
 - **Type**: SQL
 - **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Extract the domain base of an <email>.
+- **Description**: Extracts the base domain from an <email>.
 
 **Example Query**:
 
@@ -823,12 +826,12 @@ SELECT `justfunctions.eu.extract_email_domain_base`("jason@justdataplease.com")
 justdataplease
 ```
 ---
-## <a id='extract_url_domain'></a>34. extract_url_domain(url)
+## <a id='extract_url_domain'></a>36. extract_url_domain(url)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extract the domain of a <url>.
+- **Description**: Extracts the domain from a <url>.
 
 **Example Query**:
 
@@ -842,12 +845,12 @@ SELECT `justfunctions.eu.extract_url_domain`("https://hey.com/me/?231#213")
 hey.com
 ```
 ---
-## <a id='extract_url_domain_base'></a>35. extract_url_domain_base(url)
+## <a id='extract_url_domain_base'></a>37. extract_url_domain_base(url)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extract the domain base of a <url>.
+- **Description**: Extracts the base domain from a <url>.
 
 **Example Query**:
 
@@ -861,12 +864,12 @@ SELECT `justfunctions.eu.extract_url_domain_base`("https://hey.com/me/?231#213")
 hey
 ```
 ---
-## <a id='extract_url_language'></a>36. extract_url_language(url)
+## <a id='extract_url_language'></a>38. extract_url_language(url)
 
 - **Type**: SQL
-- **Tags**: text, url, new
+- **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extract language from a <url>.
+- **Description**: Extracts the language from a <url>.
 
 **Example Query**:
 
@@ -880,12 +883,12 @@ SELECT `justfunctions.eu.extract_url_language`("www.justdataplease.com/en-US/")
 english
 ```
 ---
-## <a id='extract_url_parameter'></a>37. extract_url_parameter(url, parameter)
+## <a id='extract_url_parameter'></a>39. extract_url_parameter(url, parameter)
 
 - **Type**: SQL
-- **Tags**: text, url, new
+- **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extracts parameter value from <url>.
+- **Description**: Extracts the value of a specified <parameter> from a <url>.
 
 **Example Query**:
 
@@ -899,12 +902,12 @@ SELECT `justfunctions.eu.extract_url_parameter`("www.google.com?medium=cpc&sourc
 facebook
 ```
 ---
-## <a id='extract_url_path'></a>38. extract_url_path(url, clean_url_tail)
+## <a id='extract_url_path'></a>40. extract_url_path(url, clean_url_tail)
 
 - **Type**: SQL
-- **Tags**: text, url, featured
+- **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extracts url path from <url>. Optionally remove url tail.
+- **Description**: Extracts the URL path from a <url>, optionally removing the URL tail.
 
 **Example Query**:
 
@@ -918,12 +921,12 @@ SELECT `justfunctions.eu.extract_url_path`("https://hey.com/me/?parameter=1","Tr
 /me/
 ```
 ---
-## <a id='extract_url_prefix'></a>39. extract_url_prefix(url)
+## <a id='extract_url_prefix'></a>41. extract_url_prefix(url)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extracts url prefix from <url>.
+- **Description**: Extracts the URL prefix from a <url>.
 
 **Example Query**:
 
@@ -937,12 +940,12 @@ SELECT `justfunctions.eu.extract_url_prefix`("https://en.hey.com/me/?231#213")
 en
 ```
 ---
-## <a id='extract_url_suffix'></a>40. extract_url_suffix(url)
+## <a id='extract_url_suffix'></a>42. extract_url_suffix(url)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extracts url suffix from <url>.
+- **Description**: Extracts the URL suffix from a <url>.
 
 **Example Query**:
 
@@ -956,12 +959,12 @@ SELECT `justfunctions.eu.extract_url_suffix`("https://en.hey.com/me/?231#213")
 com
 ```
 ---
-## <a id='extract_url_tail'></a>41. extract_url_tail(url)
+## <a id='extract_url_tail'></a>43. extract_url_tail(url)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Extracts url tail from <url>.
+- **Description**: Extracts the URL tail from a <url>.
 
 **Example Query**:
 
@@ -975,7 +978,7 @@ SELECT `justfunctions.eu.extract_url_tail`("https://hey.com/me/?parameter=1")
 parameter=1
 ```
 ---
-## <a id='fuzzy_distance_dam'></a>42. fuzzy_distance_dam(string_1, string_2)
+## <a id='fuzzy_distance_dam'></a>44. fuzzy_distance_dam(string_1, string_2)
 
 - **Type**: JS
 - **Tags**: text, similarity
@@ -994,7 +997,7 @@ SELECT `justfunctions.eu.fuzzy_distance_dam`("pyhtno","python")
 2
 ```
 ---
-## <a id='fuzzy_distance_leven'></a>43. fuzzy_distance_leven(string_1, string_2)
+## <a id='fuzzy_distance_leven'></a>45. fuzzy_distance_leven(string_1, string_2)
 
 - **Type**: JS
 - **Tags**: text, similarity
@@ -1013,7 +1016,7 @@ SELECT `justfunctions.eu.fuzzy_distance_leven`("pyhtno","python")
 3
 ```
 ---
-## <a id='fuzzy_nysiis'></a>44. fuzzy_nysiis(string)
+## <a id='fuzzy_nysiis'></a>46. fuzzy_nysiis(string)
 
 - **Type**: SQL
 - **Tags**: text, similarity
@@ -1032,12 +1035,12 @@ SELECT `justfunctions.eu.fuzzy_nysiis`("python")
 pytan
 ```
 ---
-## <a id='normalize_text'></a>45. normalize_text(string)
+## <a id='normalize_text'></a>47. normalize_text(string)
 
 - **Type**: SQL
-- **Tags**: NLP, text, new, featured
+- **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Normalize given <string> by converting it to lowercase, applying transliteration, removing special characters and extra spaces.
+- **Description**: Normalizes a given <string> by converting it to lowercase, applying transliteration, and removing special symbols.
 
 **Example Query**:
 
@@ -1051,12 +1054,12 @@ SELECT `justfunctions.eu.normalize_text`("🎉 Welcome to Athens in 2023! Καλ
 welcome to athens in 2023
 ```
 ---
-## <a id='parse_useragent'></a>46. parse_useragent(useragent)
+## <a id='parse_useragent'></a>48. parse_useragent(useragent)
 
 - **Type**: JS
-- **Tags**: text, useragent, new
+- **Tags**: text, useragent
 - **Region**: us,eu
-- **Description**: Parses UserAgent details from <useragent>.
+- **Description**: Parses the details from a <useragent> string.
 
 **Example Query**:
 
@@ -1081,12 +1084,12 @@ arch : null
 
 ```
 ---
-## <a id='remove_accents'></a>47. remove_accents(string)
+## <a id='remove_accents'></a>49. remove_accents(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Remove accents from `string`.
+- **Description**: Removes accents from a <string>.
 
 **Example Query**:
 
@@ -1100,12 +1103,12 @@ SELECT `justfunctions.eu.remove_accents`("¿Dóndé Éstá Mí Ágúá?")
 ¿Donde Esta Mi Agua?
 ```
 ---
-## <a id='remove_email_plus_address'></a>48. remove_email_plus_address(email)
+## <a id='remove_email_plus_address'></a>50. remove_email_plus_address(email)
 
 - **Type**: SQL
 - **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Removes any sub-address (also known as plus addressing) from the <email>.
+- **Description**:  any sub-address (also known as plus addressing) from an <email> address.
 
 **Example Query**:
 
@@ -1119,12 +1122,12 @@ SELECT `justfunctions.eu.remove_email_plus_address`("hey+other@gmail.com")
 hey@gmail.com
 ```
 ---
-## <a id='remove_en_stopwords'></a>49. remove_en_stopwords(string)
+## <a id='remove_en_stopwords'></a>51. remove_en_stopwords(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Remove english stopwords from `string`.
+- **Description**: Removes English stopwords from a <string>.
 
 **Example Query**:
 
@@ -1138,12 +1141,12 @@ SELECT `justfunctions.eu.remove_en_stopwords`("The query in the database is retu
 query   database  returning  rows   specified column values.
 ```
 ---
-## <a id='remove_extra_spaces'></a>50. remove_extra_spaces(string)
+## <a id='remove_extra_spaces'></a>52. remove_extra_spaces(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Remove extra spaces (tap,space,newline,paragraph etc) in a `string`.
+- **Description**: Removes extra spaces (tab, space, newline, paragraph, etc.) in a <string>.
 
 **Example Query**:
 
@@ -1158,12 +1161,12 @@ SELECT `justfunctions.eu.remove_extra_spaces`("\tHi     there
 Hi there.
 ```
 ---
-## <a id='remove_extra_whitespaces'></a>51. remove_extra_whitespaces(string)
+## <a id='remove_extra_whitespaces'></a>53. remove_extra_whitespaces(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Remove extra whitespaces in a `string`.
+- **Description**: Removes extra whitespaces in a <string>.
 
 **Example Query**:
 
@@ -1179,12 +1182,12 @@ Hi there
 .
 ```
 ---
-## <a id='replace_en_contractions'></a>52. replace_en_contractions(string, replacement)
+## <a id='replace_en_contractions'></a>54. replace_en_contractions(string, replacement)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Replace english contractions in 'string'.
+- **Description**: Replaces English contractions in a <string> with the specified <replacement>.
 
 **Example Query**:
 
@@ -1198,12 +1201,12 @@ SELECT `justfunctions.eu.replace_en_contractions`("I'll be great tmr thx","r"\s+
 I will be great tomorrow thanks
 ```
 ---
-## <a id='replace_html_tags'></a>53. replace_html_tags(string, replacement)
+## <a id='replace_html_tags'></a>55. replace_html_tags(string, replacement)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Replace html tags in a `string` with `replacement`
+- **Description**: Replaces HTML tags in a <string> with the specified <replacement>.
 
 **Example Query**:
 
@@ -1217,12 +1220,12 @@ SELECT `justfunctions.eu.replace_html_tags`("<div class=\'test\'>hello world<a h
 hello world hello world
 ```
 ---
-## <a id='replace_urls'></a>54. replace_urls(string, replacement)
+## <a id='replace_urls'></a>56. replace_urls(string, replacement)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Replace url patterns in a `string` with `replacement`.
+- **Description**: Replaces URL patterns in a <string> with the specified <replacement>.
 
 **Example Query**:
 
@@ -1236,12 +1239,12 @@ SELECT `justfunctions.eu.replace_urls`("Google it https://www.google.com/ !","")
 Google it !
 ```
 ---
-## <a id='split_url'></a>55. split_url(url, part)
+## <a id='split_url'></a>57. split_url(url, part)
 
 - **Type**: SQL
 - **Tags**: text, url
 - **Region**: us,eu
-- **Description**: Splits a <url> into parts, using '/' symbol.
+- **Description**: Splits a <url> into parts using the '/' symbol.
 
 **Example Query**:
 
@@ -1255,12 +1258,12 @@ SELECT `justfunctions.eu.split_url`("hey.com/me/?231#213","2")
 me
 ```
 ---
-## <a id='stemmer_greek'></a>56. stemmer_greek(string)
+## <a id='stemmer_greek'></a>58. stemmer_greek(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, stemmer
 - **Region**: us,eu
-- **Description**: Returns the stem of the `string`. Supports Greek Language.
+- **Description**: Returns the stem of a <string>. Supports the Greek language.
 
 **Example Query**:
 
@@ -1274,12 +1277,12 @@ SELECT `justfunctions.eu.stemmer_greek`("καλησπερα")
 ΚΑΛΗΣΠΕΡ
 ```
 ---
-## <a id='stemmer_lancaster'></a>57. stemmer_lancaster(string)
+## <a id='stemmer_lancaster'></a>59. stemmer_lancaster(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, stemmer
 - **Region**: us,eu
-- **Description**: Returns the stem of the `string`, using Lancaster Algorythm. Supports English Language.
+- **Description**: Returns the stem of a <string> using the Lancaster algorithm. Supports the English language.
 
 **Example Query**:
 
@@ -1293,12 +1296,12 @@ SELECT `justfunctions.eu.stemmer_lancaster`("replied")
 reply
 ```
 ---
-## <a id='stemmer_porter'></a>58. stemmer_porter(string)
+## <a id='stemmer_porter'></a>60. stemmer_porter(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, stemmer
 - **Region**: us,eu
-- **Description**: Returns the stem of the `string`, using Porter Algorythm. Supports English Language.
+- **Description**: Returns the stem of a <string> using the Porter algorithm. Supports the English language.
 
 **Example Query**:
 
@@ -1312,7 +1315,7 @@ SELECT `justfunctions.eu.stemmer_porter`("replied")
 repli
 ```
 ---
-## <a id='surrogate_key'></a>59. surrogate_key(string)
+## <a id='surrogate_key'></a>61. surrogate_key(string)
 
 - **Type**: SQL
 - **Tags**: text, surrogate key
@@ -1331,7 +1334,7 @@ SELECT `justfunctions.eu.surrogate_key`("python")
 2065202487608477923
 ```
 ---
-## <a id='surrogate_key_str'></a>60. surrogate_key_str(string)
+## <a id='surrogate_key_str'></a>62. surrogate_key_str(string)
 
 - **Type**: SQL
 - **Tags**: text, surrogate key
@@ -1350,12 +1353,12 @@ SELECT `justfunctions.eu.surrogate_key_str`("python")
 2065202487608477923
 ```
 ---
-## <a id='transliterate_anyascii'></a>61. transliterate_anyascii(string)
+## <a id='transliterate_anyascii'></a>63. transliterate_anyascii(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, transliteration
 - **Region**: us,eu
-- **Description**: Converts Unicode characters to their best ASCII representation.
+- **Description**: Converts Unicode characters in a <string> to their best ASCII representation.
 
 **Example Query**:
 
@@ -1369,12 +1372,12 @@ SELECT `justfunctions.eu.transliterate_anyascii`("καλημέρα")
 kalimera
 ```
 ---
-## <a id='validate_email'></a>62. validate_email(email)
+## <a id='validate_email'></a>64. validate_email(email)
 
 - **Type**: SQL
-- **Tags**: text, email, new
+- **Tags**: text, email
 - **Region**: us,eu
-- **Description**: Detects if <email> is valid.
+- **Description**: Validates if an <email> address is properly formatted.
 
 **Example Query**:
 
@@ -1388,7 +1391,7 @@ SELECT `justfunctions.eu.validate_email`("12/jason@gmail.com")
 0
 ```
 ---
-## <a id='word_distance'></a>63. word_distance(string_1, string_2)
+## <a id='word_distance'></a>65. word_distance(string_1, string_2)
 
 - **Type**: JS
 - **Tags**: text, similarity
@@ -1407,12 +1410,12 @@ SELECT `justfunctions.eu.word_distance`("python","pithon")
 1
 ```
 ---
-## <a id='word_tokens'></a>64. word_tokens(string, symbol)
+## <a id='word_tokens'></a>66. word_tokens(string, symbol)
 
 - **Type**: SQL
 - **Tags**: NLP, text
 - **Region**: us,eu
-- **Description**: Splits 'string' into words.
+- **Description**: Splits a <string> into words using the specified <symbol>.
 
 **Example Query**:
 
