@@ -173,7 +173,16 @@ def deploy_all_functions(project_id, allow_private, dataset, location, cloud_sto
                     conf['github'] = f"[link]({conf.get('github')})" if conf.get('github') else ""
                     conf['source'] = f"[link]({conf.get('source')})" if conf.get('source') else ""
                     conf['tutorial'] = f"[link]({conf.get('tutorial')})" if conf.get('tutorial') else ""
-                    conf['ftype'] = conf['type'].replace("function_", "").upper()
+
+                    if conf['type'] == 'aggregate_function_sql':
+                        conf['ftype'] = 'SQL User Defined Aggregate Function (SQL UDAF)'
+                    elif conf['type'] == 'function_sql':
+                        conf['ftype'] = 'SQL User Defined Function (SQL UDF)'
+                    elif conf['type'] == 'function_js':
+                        conf['ftype'] = 'JavaScript User Defined Function (JavaScript UDF)'
+                    elif conf['type'] == 'procedure':
+                        conf['ftype'] = 'User Defined SQL Procedure'
+
                     if conf.get('libraries'):
                         conf['libraries'] = [{"cloudstorage_url": f"{cloud_storage_directory}/{l['cloudstorage_url']}"}
                                              for l in conf['libraries']]

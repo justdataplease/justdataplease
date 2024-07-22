@@ -76,7 +76,7 @@
 ---
 ## <a id='channel_attribution'></a>1. channel_attribution(source, medium, campaign_name)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: analytics, text
 - **Region**: eu
 - **Description**: Performs channel attribution using the <source>, <medium>, and <campaign_name>.
@@ -200,7 +200,7 @@ paid shopping
 ---
 ## <a id='find_cyber_week'></a>2. find_cyber_week(date)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Determines if a <date> falls within Cyber Week and identifies the specific day (e.g., Thanksgiving, Black Friday).
@@ -241,7 +241,7 @@ SELECT `justfunctions.eu.find_cyber_week`("2023-11-24")
 ---
 ## <a id='find_moon_illumination'></a>3. find_moon_illumination(date)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Calculates the Moon's illumination on a specific <date>, expressed as a fraction or percentage. For example, during a full moon, the illumination is near 100, while during a new moon, it is close to 0
@@ -267,7 +267,7 @@ SELECT `justfunctions.eu.find_moon_illumination`("2090-01-16")
 ---
 ## <a id='find_moon_illumination__'></a>4. find_moon_illumination__(date_string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Helper function for find_moon_illumination, using a <date_string>.
@@ -293,7 +293,7 @@ SELECT `justfunctions.eu.find_moon_illumination__`("2090-01-16")
 ---
 ## <a id='find_season'></a>5. find_season(date)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Identifies the season name and the start date of the season for a given <date>.
@@ -335,7 +335,7 @@ Winter | 2019-12-01
 ---
 ## <a id='generate_date_calendar'></a>6. generate_date_calendar(table_name, start_date, end_date)
 
-- **Type**: PROCEDURE
+- **Type**: User Defined SQL Procedure
 - **Tags**: operations, date
 - **Region**: eu
 - **Description**: Generates a complete date calendar table named <table_name> from <start_date> to <end_date>.
@@ -412,7 +412,7 @@ CALL `justfunctions.eu.generate_date_calendar`("justfunctions.test.date_calendar
 ---
 ## <a id='generate_date_calendar_with_holidays'></a>7. generate_date_calendar_with_holidays(table_name, start_date, end_date, country)
 
-- **Type**: PROCEDURE
+- **Type**: User Defined SQL Procedure
 - **Tags**: operations, date
 - **Region**: eu
 - **Description**: Generates a complete date calendar table named <table_name> with holidays for the specified <country>, from <start_date> to <end_date>. Holidays are available between 2000-2100.
@@ -493,7 +493,7 @@ CALL `justfunctions.eu.generate_date_calendar_with_holidays`("justfunctions.test
 ---
 ## <a id='generate_hour_calendar'></a>8. generate_hour_calendar(table_name)
 
-- **Type**: PROCEDURE
+- **Type**: User Defined SQL Procedure
 - **Tags**: operations, date
 - **Region**: eu
 - **Description**: Generates an hourly calendar table named <table_name> for a 24-hour day.
@@ -564,7 +564,7 @@ CALL `justfunctions.eu.generate_hour_calendar`("justfunctions.test.hour_calendar
 ---
 ## <a id='seconds_to_date'></a>9. seconds_to_date(seconds)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Converts <seconds> to date format '%Y-%m-%d'.
@@ -588,7 +588,7 @@ SELECT `justfunctions.eu.seconds_to_date`("1687613655")
 ---
 ## <a id='seconds_to_timestamp'></a>10. seconds_to_timestamp(seconds)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Converts <seconds> to timestamp format '%Y-%m-%d %H:%M:%S'.
@@ -612,7 +612,7 @@ SELECT `justfunctions.eu.seconds_to_timestamp`("1687613655")
 ---
 ## <a id='shift_date'></a>11. shift_date(date, years, months, days)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Shifts a <date> by adding or subtracting specified <years>, <months>, and <days>. Use a minus (-) to subtract.
@@ -646,7 +646,7 @@ SELECT `justfunctions.eu.shift_date`("2023-01-01","-2","1","4")
 ---
 ## <a id='timestamp_to_string'></a>12. timestamp_to_string(timestamp)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: date
 - **Region**: eu
 - **Description**: Converts a <timestamp> to string format '%Y-%m-%d %H:%M:%S'.
@@ -670,7 +670,7 @@ SELECT `justfunctions.eu.timestamp_to_string`("2023-06-24 13:01:02 UTC")
 ---
 ## <a id='convert_json_to_struct'></a>13. convert_json_to_struct(string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: operations, text
 - **Region**: eu
 - **Description**: Converts a JSON <string> to a STRUCT data type.
@@ -706,7 +706,7 @@ SELECT `justfunctions.eu.convert_json_to_struct`("{ "time": { "new_value": "17:0
 ---
 ## <a id='dedup_table'></a>14. dedup_table(table_name, timestamp_column, unique_column, output_table_suffix)
 
-- **Type**: PROCEDURE
+- **Type**: User Defined SQL Procedure
 - **Tags**: operations
 - **Region**: eu
 - **Description**: Creates a deduplicated version of the table <table_name>, retaining the latest row based on the <timestamp_column>, and outputs it with the suffix <output_table_suffix>. Arguments <timestamp_column>, <unique_column>, <output_table_suffix> are optional.
@@ -776,7 +776,7 @@ your_project.your_dataset.your_table.your_table_dedup
 ---
 ## <a id='generate_dbt_yml_schema'></a>15. generate_dbt_yml_schema(project_id, dataset_id)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: operations
 - **Region**: eu
 - **Description**: Generates a DBT schema.yml using the information_schema of the generated tables for the specified <project_id> and <dataset_id>. For this function to work you need to create your own function in your dataset.
@@ -822,7 +822,7 @@ models: - name: country_distinct columns: - name: service_country - name: offici
 ---
 ## <a id='generate_justsql_schema'></a>16. generate_justsql_schema(project_id, dataset_id, tables)
 
-- **Type**: PROCEDURE
+- **Type**: User Defined SQL Procedure
 - **Tags**: operations
 - **Region**: eu
 - **Description**: Generates a JSON schema for use with JustSQL GPT using the specified <project_id>, <dataset_id>, and list of <tables> (https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery).
@@ -870,7 +870,7 @@ CALL `justfunctions.eu.generate_justsql_schema`("justfunctions","eu","['date_cal
 ---
 ## <a id='greatest_not_null'></a>17. greatest_not_null(arr)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: operations
 - **Region**: eu
 - **Description**: This SQL function returns the greatest (maximum) value among multiple columns in the array <arr>, while properly handling NULL values.
@@ -902,7 +902,7 @@ SELECT `justfunctions.eu.greatest_not_null`("[col_1, col_2, col_3]")
 ---
 ## <a id='least_not_null'></a>18. least_not_null(arr)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: operations
 - **Region**: eu
 - **Description**: This SQL function returns the least (minimum) value among multiple columns in the array <arr>, while properly handling NULL values.
@@ -934,7 +934,7 @@ SELECT `justfunctions.eu.least_not_null`("[col_1, col_2, col_3]")
 ---
 ## <a id='parse_yaml'></a>19. parse_yaml(string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: operations, text
 - **Region**: eu
 - **Description**: Converts a YAML <string> to JSON format.
@@ -969,7 +969,7 @@ SELECT `justfunctions.eu.parse_yaml`("---
 ---
 ## <a id='safe_least'></a>20. safe_least(x, y)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: operations
 - **Region**: eu
 - **Description**: Safely compares two values <x> and <y> and returns the lesser of the two while properly handling NULL values.
@@ -999,7 +999,7 @@ SELECT `justfunctions.eu.safe_least`("col_1","col_2")
 ---
 ## <a id='geometric_mean'></a>21. geometric_mean(col)
 
-- **Type**: AGGREGATE_SQL
+- **Type**: SQL User Defined Aggregate Function (SQL UDAF)
 - **Tags**: STATISTICS
 - **Region**: eu
 - **Description**: Finds the geometric mean of a column <value>.
@@ -1023,7 +1023,7 @@ SELECT `justfunctions.eu.geometric_mean`("col_1")
 ---
 ## <a id='median_approx'></a>22. median_approx(col)
 
-- **Type**: AGGREGATE_SQL
+- **Type**: SQL User Defined Aggregate Function (SQL UDAF)
 - **Tags**: STATISTICS, percentiles
 - **Region**: eu
 - **Description**: Finds the median of the specified column <col> by calculating approximate quantiles (1% granularity approximation). This approach provides an efficient and fast estimate of the median value.
@@ -1047,7 +1047,7 @@ SELECT `justfunctions.eu.median_approx`("d")
 ---
 ## <a id='outliers_iqr'></a>23. outliers_iqr(col, value_percentile_25, value_percentile_75)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: STATISTICS, outliers
 - **Region**: eu
 - **Description**: Detects if a <value> is an outlier based on the IQR method, using the 25th percentile <value_percentile_25> and 75th percentile <value_percentile_75>.
@@ -1078,7 +1078,7 @@ SELECT `justfunctions.eu.outliers_iqr`("col","value_percentile_25","value_percen
 ---
 ## <a id='outliers_percentiles'></a>24. outliers_percentiles(col, value_percentile_5, value_percentile_95)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: STATISTICS, outliers
 - **Region**: eu
 - **Description**: Detects if a <value> is an outlier based on then 5th percentile <value_percentile_5> and 95th percentile <value_percentile_95>. Assigns -1 for lower bound outliers, 1 for upper bound outliers, and 0 for non-outliers.
@@ -1109,7 +1109,7 @@ SELECT `justfunctions.eu.outliers_percentiles`("col","value_percentile_5","value
 ---
 ## <a id='percentiles'></a>25. percentiles(arr, percentile)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: STATISTICS, percentiles
 - **Region**: eu
 - **Description**: Finds the specified <percentile> of an array <arr>.
@@ -1138,7 +1138,7 @@ SELECT `justfunctions.eu.percentiles`("[1.2, 2.3, 3.2, 4.2, 5]","50")
 ---
 ## <a id='percentiles_approx'></a>26. percentiles_approx(col, percentile)
 
-- **Type**: AGGREGATE_SQL
+- **Type**: SQL User Defined Aggregate Function (SQL UDAF)
 - **Tags**: STATISTICS, percentiles
 - **Region**: eu
 - **Description**: Finds the percentile <percentile> of the specified column <column> by calculating approximate quantiles (1% granularity approximation). This approach provides an efficient and fast estimate of percentiles.
@@ -1162,7 +1162,7 @@ SELECT `justfunctions.eu.percentiles_approx`("d","50")
 ---
 ## <a id='weighted_average'></a>27. weighted_average(col, weight)
 
-- **Type**: AGGREGATE_SQL
+- **Type**: SQL User Defined Aggregate Function (SQL UDAF)
 - **Tags**: STATISTICS
 - **Region**: eu
 - **Description**: Finds the weighted average of a column <value>.
@@ -1186,7 +1186,7 @@ SELECT `justfunctions.eu.weighted_average`("g","w")
 ---
 ## <a id='clean_email'></a>28. clean_email(email)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Converts an <email> address to lowercase and removes any sub-address (also known as plus addressing).
@@ -1210,7 +1210,7 @@ hello@gmail.com
 ---
 ## <a id='clean_special_symbols'></a>29. clean_special_symbols(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Cleans special symbols in a <string> using custom symbols.
@@ -1234,7 +1234,7 @@ vacation time
 ---
 ## <a id='clean_special_symbols_custom'></a>30. clean_special_symbols_custom(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Cleans special symbols in a <string> using custom symbols.
@@ -1258,7 +1258,7 @@ vacation time
 ---
 ## <a id='clean_url'></a>31. clean_url(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Removes http://, ftp://, https://, the URL tail, and the last URL slash from a <url>.
@@ -1282,7 +1282,7 @@ hey.com/me
 ---
 ## <a id='decode_url'></a>32. decode_url(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Decodes a <url>.
@@ -1314,7 +1314,7 @@ https://justdataplease.com/justfunctions-bigquery/?utm_campaign=test
 ---
 ## <a id='dedup_chars'></a>33. dedup_chars(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Deduplicates characters in a <string>.
@@ -1347,7 +1347,7 @@ Helo!
 ---
 ## <a id='detect_department_email'></a>34. detect_department_email(email)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Detects if an <email> belongs to a business department (e.g., sales, HR, support).
@@ -1393,7 +1393,7 @@ SELECT `justfunctions.eu.detect_department_email`("sales@dev.io")
 ---
 ## <a id='detect_free_email'></a>35. detect_free_email(email)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Detects if an <email> belongs to a free email service (e.g., Gmail, Yahoo, Outlook).
@@ -1419,7 +1419,7 @@ SELECT `justfunctions.eu.detect_free_email`("jason@gmail.com")
 ---
 ## <a id='detect_free_email_domain'></a>36. detect_free_email_domain(email_domain)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Detects if an <email_domain> belongs to a free email service (e.g., Gmail, Yahoo, Outlook).
@@ -1443,7 +1443,7 @@ SELECT `justfunctions.eu.detect_free_email_domain`("gmail")
 ---
 ## <a id='detect_useragent_device_type'></a>37. detect_useragent_device_type(useragent)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, useragent
 - **Region**: eu
 - **Description**: Detects the device type from a <useragent> string. It can be a tablet, mobile, PC, TV, or other.
@@ -1475,7 +1475,7 @@ tablet
 ---
 ## <a id='extract_all_url_parameters'></a>38. extract_all_url_parameters(url)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts all parameters from a <url> in JSON format.
@@ -1510,7 +1510,7 @@ SELECT `justfunctions.eu.extract_all_url_parameters`("justdataplease.com/test/?m
 ---
 ## <a id='extract_email_domain'></a>39. extract_email_domain(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Extracts the domain from an <email>.
@@ -1534,7 +1534,7 @@ justdataplease.com
 ---
 ## <a id='extract_email_domain_base'></a>40. extract_email_domain_base(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Extracts the base domain from an <email>.
@@ -1558,7 +1558,7 @@ justdataplease
 ---
 ## <a id='extract_url_domain'></a>41. extract_url_domain(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the domain from a <url>.
@@ -1582,7 +1582,7 @@ hey.com
 ---
 ## <a id='extract_url_domain_base'></a>42. extract_url_domain_base(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the base domain from a <url>.
@@ -1606,7 +1606,7 @@ hey
 ---
 ## <a id='extract_url_language'></a>43. extract_url_language(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the language from a <url>.
@@ -1681,7 +1681,7 @@ english
 ---
 ## <a id='extract_url_parameter'></a>44. extract_url_parameter(url, parameter)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the value of a specified <parameter> from a <url>.
@@ -1705,7 +1705,7 @@ facebook
 ---
 ## <a id='extract_url_path'></a>45. extract_url_path(url, clean_url_tail)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the URL path from a <url>, optionally removing the URL tail.
@@ -1733,7 +1733,7 @@ SELECT `justfunctions.eu.extract_url_path`("https://hey.com/me/?parameter=1","Tr
 ---
 ## <a id='extract_url_prefix'></a>46. extract_url_prefix(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the URL prefix from a <url>.
@@ -1757,7 +1757,7 @@ en
 ---
 ## <a id='extract_url_suffix'></a>47. extract_url_suffix(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the URL suffix from a <url>.
@@ -1781,7 +1781,7 @@ com
 ---
 ## <a id='extract_url_tail'></a>48. extract_url_tail(url)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Extracts the URL tail from a <url>.
@@ -1805,7 +1805,7 @@ parameter=1
 ---
 ## <a id='fuzzy_distance_dam'></a>49. fuzzy_distance_dam(string_1, string_2)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: text, similarity
 - **Region**: eu
 - **Description**: Calculates Damerau-Levenshtein distance between <string_1> and <string_2>.
@@ -1875,7 +1875,7 @@ SELECT `justfunctions.eu.fuzzy_distance_dam`("pyhtno","python")
 ---
 ## <a id='fuzzy_distance_leven'></a>50. fuzzy_distance_leven(string_1, string_2)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: text, similarity
 - **Region**: eu
 - **Description**: Calculates Levenshtein distance between <string_1> and <string_2>.
@@ -1898,7 +1898,7 @@ SELECT `justfunctions.eu.fuzzy_distance_leven`("pyhtno","python")
 ---
 ## <a id='fuzzy_nysiis'></a>51. fuzzy_nysiis(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, similarity
 - **Region**: eu
 - **Description**: Calculates NYSIIS code for <string>.
@@ -1983,7 +1983,7 @@ pytan
 ---
 ## <a id='normalize_text'></a>52. normalize_text(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Normalizes a given <string> by converting it to lowercase, applying transliteration, and removing special symbols.
@@ -2017,7 +2017,7 @@ welcome to athens in 2023
 ---
 ## <a id='parse_useragent'></a>53. parse_useragent(useragent)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: text, useragent
 - **Region**: eu
 - **Description**: Parses the details from a <useragent> string.
@@ -2061,7 +2061,7 @@ arch : null
 ---
 ## <a id='remove_accents'></a>54. remove_accents(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Removes accents from a <string>.
@@ -2085,7 +2085,7 @@ SELECT `justfunctions.eu.remove_accents`("¿Dóndé Éstá Mí Ágúá?")
 ---
 ## <a id='remove_email_plus_address'></a>55. remove_email_plus_address(email)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**:  any sub-address (also known as plus addressing) from an <email> address.
@@ -2109,7 +2109,7 @@ hey@gmail.com
 ---
 ## <a id='remove_en_stopwords'></a>56. remove_en_stopwords(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Removes English stopwords from a <string>.
@@ -2133,7 +2133,7 @@ query   database  returning  rows   specified column values.
 ---
 ## <a id='remove_extra_spaces'></a>57. remove_extra_spaces(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Removes extra spaces (tab, space, newline, paragraph, etc.) in a <string>.
@@ -2158,7 +2158,7 @@ Hi there.
 ---
 ## <a id='remove_extra_whitespaces'></a>58. remove_extra_whitespaces(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Removes extra whitespaces in a <string>.
@@ -2184,7 +2184,7 @@ Hi there
 ---
 ## <a id='replace_en_contractions'></a>59. replace_en_contractions(string, replacement)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Replaces English contractions in a <string> with the specified <replacement>.
@@ -2441,7 +2441,7 @@ I will be great tomorrow thanks
 ---
 ## <a id='replace_html_tags'></a>60. replace_html_tags(string, replacement)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Replaces HTML tags in a <string> with the specified <replacement>.
@@ -2465,7 +2465,7 @@ hello world hello world
 ---
 ## <a id='replace_urls'></a>61. replace_urls(string, replacement)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Replaces URL patterns in a <string> with the specified <replacement>.
@@ -2489,7 +2489,7 @@ Google it !
 ---
 ## <a id='split_url'></a>62. split_url(url, part)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, url
 - **Region**: eu
 - **Description**: Splits a <url> into parts using the '/' symbol.
@@ -2518,7 +2518,7 @@ me
 ---
 ## <a id='stemmer_greek'></a>63. stemmer_greek(string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: NLP, text, stemmer
 - **Region**: eu
 - **Description**: Returns the stem of a <string>. Supports the Greek language.
@@ -2541,7 +2541,7 @@ SELECT `justfunctions.eu.stemmer_greek`("καλησπερα")
 ---
 ## <a id='stemmer_lancaster'></a>64. stemmer_lancaster(string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: NLP, text, stemmer
 - **Region**: eu
 - **Description**: Returns the stem of a <string> using the Lancaster algorithm. Supports the English language.
@@ -2564,7 +2564,7 @@ reply
 ---
 ## <a id='stemmer_porter'></a>65. stemmer_porter(string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: NLP, text, stemmer
 - **Region**: eu
 - **Description**: Returns the stem of a <string> using the Porter algorithm. Supports the English language.
@@ -2587,7 +2587,7 @@ repli
 ---
 ## <a id='surrogate_key'></a>66. surrogate_key(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, operations
 - **Region**: eu
 - **Description**: Creates a hashed value of multiple field <string>. Use CONCAT to create <string> to include multiple fields.
@@ -2611,7 +2611,7 @@ SELECT `justfunctions.eu.surrogate_key`("python")
 ---
 ## <a id='surrogate_key_str'></a>67. surrogate_key_str(string)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, operations
 - **Region**: eu
 - **Description**: Creates a hashed value of multiple field <string>. Use CONCAT to create <string> to include multiple fields.
@@ -2635,7 +2635,7 @@ SELECT `justfunctions.eu.surrogate_key_str`("python")
 ---
 ## <a id='transliterate_anyascii'></a>68. transliterate_anyascii(string)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: NLP, text, transliteration
 - **Region**: eu
 - **Description**: Converts Unicode characters in a <string> to their best ASCII representation.
@@ -2663,7 +2663,7 @@ kalimera
 ---
 ## <a id='validate_email'></a>69. validate_email(email)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: text, email
 - **Region**: eu
 - **Description**: Validates if an <email> address is properly formatted.
@@ -2692,7 +2692,7 @@ SELECT `justfunctions.eu.validate_email`("12/jason@gmail.com")
 ---
 ## <a id='word_distance'></a>70. word_distance(string_1, string_2)
 
-- **Type**: JS
+- **Type**: JavaScript User Defined Function (JavaScript UDF)
 - **Tags**: text, similarity
 - **Region**: eu
 - **Description**: Calculates Levenshtein distance between <string_1> and <string_2>.
@@ -2715,7 +2715,7 @@ SELECT `justfunctions.eu.word_distance`("python","pithon")
 ---
 ## <a id='word_tokens'></a>71. word_tokens(string, symbol)
 
-- **Type**: SQL
+- **Type**: SQL User Defined Function (SQL UDF)
 - **Tags**: NLP, text
 - **Region**: eu
 - **Description**: Splits a <string> into words using the specified <symbol>.
