@@ -128,18 +128,19 @@ def deploy_function(conf, client, project_id, dataset_id, filename):
     return statement, example_query, example_output, example_overview
 
 
-def deploy_all_functions(project_id, allow_private, datasets, cloud_storage_directory, specific=False):
+def deploy_all_functions(project_id, allow_private, dataset, location, cloud_storage_directory, specific=False):
     """
     Procedure to deploy all functions to BigQuery
     :param project_id:
     :param allow_private:
-    :param datasets:
+    :param dataset:
+    :param location:
     :param cloud_storage_directory:
     :param specific:
     :return:
     """
     # Create a BigQuery client (you need to install gcloud CLI and perform gcloud auth login)
-    client = bigquery.Client(project=project_id)
+    client = bigquery.Client(project=project_id, location=location)
 
     # Loop through the files in the directory
     documentation = []
@@ -168,7 +169,7 @@ def deploy_all_functions(project_id, allow_private, datasets, cloud_storage_dire
                     conf['title'] = construct_function_name(conf=conf, function_name=filename.split(".")[0])
                     conf['slug'] = filename.split(".")[0]
                     conf['tags'] = conf['category']
-                    conf['region'] = ",".join(datasets)
+                    conf['region'] = location
                     conf['github'] = f"[link]({conf.get('github')})" if conf.get('github') else ""
                     conf['source'] = f"[link]({conf.get('source')})" if conf.get('source') else ""
                     conf['tutorial'] = f"[link]({conf.get('tutorial')})" if conf.get('tutorial') else ""
@@ -177,13 +178,12 @@ def deploy_all_functions(project_id, allow_private, datasets, cloud_storage_dire
                         conf['libraries'] = [{"cloudstorage_url": f"{cloud_storage_directory}/{l['cloudstorage_url']}"}
                                              for l in conf['libraries']]
                     # Loop through different regions
-                    for dataset_id in datasets:
-                        conf['statement'], conf['example_query'], conf['example_output'], conf[
-                            'example_overview'] = deploy_function(conf=conf,
-                                                                  client=client,
-                                                                  project_id=project_id,
-                                                                  dataset_id=dataset_id,
-                                                                  filename=filename)
+                    conf['statement'], conf['example_query'], conf['example_output'], conf[
+                        'example_overview'] = deploy_function(conf=conf,
+                                                              client=client,
+                                                              project_id=project_id,
+                                                              dataset_id=dataset,
+                                                              filename=filename)
                     documentation.append(conf)
     return documentation
 
@@ -258,10 +258,11 @@ def run():
             project = projects[project]
             project_id = project['project_id']
             allow_private = project['allow_private']
-            datasets = project['datasets']
+            dataset = project['dataset']
+            location = project['location']
             cloud_storage_directory = project['cloud_storage_directory']
 
-            documentation = deploy_all_functions(project_id, allow_private, datasets, cloud_storage_directory,
+            documentation = deploy_all_functions(project_id, allow_private, dataset, location, cloud_storage_directory,
                                                  specific=specific)
     except Exception as exc:
         raise exc

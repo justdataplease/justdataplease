@@ -17,13 +17,13 @@ output:
 examples:
   - description: ""
     arguments:
-      - "---
-         updated_at:
-         - 2023-11-12 08:08:25.291779000 Z
-         - 2023-11-12 08:25:18.648572080 Z
-         status:
-         - new
-         - canceled
+      - "---\n
+         updated_at:\n
+         - 2023-11-12 08:08:25.291779000 Z\n
+         - 2023-11-12 08:25:18.648572080 Z\n
+         status:\n
+         - new\n
+         - canceled\n
          "
     output: { "status": [ "new","canceled" ],"updated_at": [ "2023-11-12T08:08:25.291Z","2023-11-12T08:25:18.648Z" ] }
     region: ALL

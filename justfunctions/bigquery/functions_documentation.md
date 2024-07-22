@@ -21,59 +21,64 @@
 18. [least_not_null(arr)](#least_not_null)
 19. [parse_yaml(string)](#parse_yaml)
 20. [safe_least(x, y)](#safe_least)
-21. [detect_outlier_iqr(value, value_percentile_25, value_percentile_75)](#detect_outlier_iqr)
-22. [percentile(arr, percentile)](#percentile)
-23. [clean_email(email)](#clean_email)
-24. [clean_special_symbols(string)](#clean_special_symbols)
-25. [clean_special_symbols_custom(string)](#clean_special_symbols_custom)
-26. [clean_url(url)](#clean_url)
-27. [decode_url(url)](#decode_url)
-28. [dedup_chars(string)](#dedup_chars)
-29. [detect_department_email(email)](#detect_department_email)
-30. [detect_free_email(email)](#detect_free_email)
-31. [detect_free_email_domain(email_domain)](#detect_free_email_domain)
-32. [detect_useragent_device_type(useragent)](#detect_useragent_device_type)
-33. [extract_all_url_parameters(url)](#extract_all_url_parameters)
-34. [extract_email_domain(url)](#extract_email_domain)
-35. [extract_email_domain_base(url)](#extract_email_domain_base)
-36. [extract_url_domain(url)](#extract_url_domain)
-37. [extract_url_domain_base(url)](#extract_url_domain_base)
-38. [extract_url_language(url)](#extract_url_language)
-39. [extract_url_parameter(url, parameter)](#extract_url_parameter)
-40. [extract_url_path(url, clean_url_tail)](#extract_url_path)
-41. [extract_url_prefix(url)](#extract_url_prefix)
-42. [extract_url_suffix(url)](#extract_url_suffix)
-43. [extract_url_tail(url)](#extract_url_tail)
-44. [fuzzy_distance_dam(string_1, string_2)](#fuzzy_distance_dam)
-45. [fuzzy_distance_leven(string_1, string_2)](#fuzzy_distance_leven)
-46. [fuzzy_nysiis(string)](#fuzzy_nysiis)
-47. [normalize_text(string)](#normalize_text)
-48. [parse_useragent(useragent)](#parse_useragent)
-49. [remove_accents(string)](#remove_accents)
-50. [remove_email_plus_address(email)](#remove_email_plus_address)
-51. [remove_en_stopwords(string)](#remove_en_stopwords)
-52. [remove_extra_spaces(string)](#remove_extra_spaces)
-53. [remove_extra_whitespaces(string)](#remove_extra_whitespaces)
-54. [replace_en_contractions(string, replacement)](#replace_en_contractions)
-55. [replace_html_tags(string, replacement)](#replace_html_tags)
-56. [replace_urls(string, replacement)](#replace_urls)
-57. [split_url(url, part)](#split_url)
-58. [stemmer_greek(string)](#stemmer_greek)
-59. [stemmer_lancaster(string)](#stemmer_lancaster)
-60. [stemmer_porter(string)](#stemmer_porter)
-61. [surrogate_key(string)](#surrogate_key)
-62. [surrogate_key_str(string)](#surrogate_key_str)
-63. [transliterate_anyascii(string)](#transliterate_anyascii)
-64. [validate_email(email)](#validate_email)
-65. [word_distance(string_1, string_2)](#word_distance)
-66. [word_tokens(string, symbol)](#word_tokens)
+21. [geometric_mean(col)](#geometric_mean)
+22. [median_approx(col)](#median_approx)
+23. [outliers_iqr(col, value_percentile_25, value_percentile_75)](#outliers_iqr)
+24. [outliers_percentiles(col, value_percentile_5, value_percentile_95)](#outliers_percentiles)
+25. [percentiles(arr, percentile)](#percentiles)
+26. [percentiles_approx(col, percentile)](#percentiles_approx)
+27. [weighted_average(col, weight)](#weighted_average)
+28. [clean_email(email)](#clean_email)
+29. [clean_special_symbols(string)](#clean_special_symbols)
+30. [clean_special_symbols_custom(string)](#clean_special_symbols_custom)
+31. [clean_url(url)](#clean_url)
+32. [decode_url(url)](#decode_url)
+33. [dedup_chars(string)](#dedup_chars)
+34. [detect_department_email(email)](#detect_department_email)
+35. [detect_free_email(email)](#detect_free_email)
+36. [detect_free_email_domain(email_domain)](#detect_free_email_domain)
+37. [detect_useragent_device_type(useragent)](#detect_useragent_device_type)
+38. [extract_all_url_parameters(url)](#extract_all_url_parameters)
+39. [extract_email_domain(url)](#extract_email_domain)
+40. [extract_email_domain_base(url)](#extract_email_domain_base)
+41. [extract_url_domain(url)](#extract_url_domain)
+42. [extract_url_domain_base(url)](#extract_url_domain_base)
+43. [extract_url_language(url)](#extract_url_language)
+44. [extract_url_parameter(url, parameter)](#extract_url_parameter)
+45. [extract_url_path(url, clean_url_tail)](#extract_url_path)
+46. [extract_url_prefix(url)](#extract_url_prefix)
+47. [extract_url_suffix(url)](#extract_url_suffix)
+48. [extract_url_tail(url)](#extract_url_tail)
+49. [fuzzy_distance_dam(string_1, string_2)](#fuzzy_distance_dam)
+50. [fuzzy_distance_leven(string_1, string_2)](#fuzzy_distance_leven)
+51. [fuzzy_nysiis(string)](#fuzzy_nysiis)
+52. [normalize_text(string)](#normalize_text)
+53. [parse_useragent(useragent)](#parse_useragent)
+54. [remove_accents(string)](#remove_accents)
+55. [remove_email_plus_address(email)](#remove_email_plus_address)
+56. [remove_en_stopwords(string)](#remove_en_stopwords)
+57. [remove_extra_spaces(string)](#remove_extra_spaces)
+58. [remove_extra_whitespaces(string)](#remove_extra_whitespaces)
+59. [replace_en_contractions(string, replacement)](#replace_en_contractions)
+60. [replace_html_tags(string, replacement)](#replace_html_tags)
+61. [replace_urls(string, replacement)](#replace_urls)
+62. [split_url(url, part)](#split_url)
+63. [stemmer_greek(string)](#stemmer_greek)
+64. [stemmer_lancaster(string)](#stemmer_lancaster)
+65. [stemmer_porter(string)](#stemmer_porter)
+66. [surrogate_key(string)](#surrogate_key)
+67. [surrogate_key_str(string)](#surrogate_key_str)
+68. [transliterate_anyascii(string)](#transliterate_anyascii)
+69. [validate_email(email)](#validate_email)
+70. [word_distance(string_1, string_2)](#word_distance)
+71. [word_tokens(string, symbol)](#word_tokens)
 
 ---
 ## <a id='channel_attribution'></a>1. channel_attribution(source, medium, campaign_name)
 
 - **Type**: SQL
 - **Tags**: analytics, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Performs channel attribution using the <source>, <medium>, and <campaign_name>.
 
 ```sql
@@ -197,7 +202,7 @@ paid shopping
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Determines if a <date> falls within Cyber Week and identifies the specific day (e.g., Thanksgiving, Black Friday).
 
 ```sql
@@ -238,7 +243,7 @@ SELECT `justfunctions.eu.find_cyber_week`("2023-11-24")
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Calculates the Moon's illumination on a specific <date>, expressed as a fraction or percentage. For example, during a full moon, the illumination is near 100, while during a new moon, it is close to 0
 
 ```sql
@@ -264,7 +269,7 @@ SELECT `justfunctions.eu.find_moon_illumination`("2090-01-16")
 
 - **Type**: JS
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Helper function for find_moon_illumination, using a <date_string>.
 
 ```sql
@@ -290,7 +295,7 @@ SELECT `justfunctions.eu.find_moon_illumination__`("2090-01-16")
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Identifies the season name and the start date of the season for a given <date>.
 
 ```sql
@@ -332,7 +337,7 @@ Winter | 2019-12-01
 
 - **Type**: PROCEDURE
 - **Tags**: operations, date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Generates a complete date calendar table named <table_name> from <start_date> to <end_date>.
 
 ```sql
@@ -409,7 +414,7 @@ CALL `justfunctions.eu.generate_date_calendar`("justfunctions.test.date_calendar
 
 - **Type**: PROCEDURE
 - **Tags**: operations, date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Generates a complete date calendar table named <table_name> with holidays for the specified <country>, from <start_date> to <end_date>. Holidays are available between 2000-2100.
 
 ```sql
@@ -490,7 +495,7 @@ CALL `justfunctions.eu.generate_date_calendar_with_holidays`("justfunctions.test
 
 - **Type**: PROCEDURE
 - **Tags**: operations, date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Generates an hourly calendar table named <table_name> for a 24-hour day.
 
 ```sql
@@ -561,7 +566,7 @@ CALL `justfunctions.eu.generate_hour_calendar`("justfunctions.test.hour_calendar
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts <seconds> to date format '%Y-%m-%d'.
 
 ```sql
@@ -585,7 +590,7 @@ SELECT `justfunctions.eu.seconds_to_date`("1687613655")
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts <seconds> to timestamp format '%Y-%m-%d %H:%M:%S'.
 
 ```sql
@@ -609,7 +614,7 @@ SELECT `justfunctions.eu.seconds_to_timestamp`("1687613655")
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Shifts a <date> by adding or subtracting specified <years>, <months>, and <days>. Use a minus (-) to subtract.
 
 ```sql
@@ -643,7 +648,7 @@ SELECT `justfunctions.eu.shift_date`("2023-01-01","-2","1","4")
 
 - **Type**: SQL
 - **Tags**: date
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts a <timestamp> to string format '%Y-%m-%d %H:%M:%S'.
 
 ```sql
@@ -667,7 +672,7 @@ SELECT `justfunctions.eu.timestamp_to_string`("2023-06-24 13:01:02 UTC")
 
 - **Type**: JS
 - **Tags**: operations, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts a JSON <string> to a STRUCT data type.
 
 ```sql
@@ -688,7 +693,7 @@ CREATE OR REPLACE FUNCTION `justfunctions.eu.convert_json_to_struct`(`string` st
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.convert_json_to_struct`("{'time': {'new_value': '17:00', 'old_value': '16:30'}, 'price': {'new_value': '1', 'old_value': '2'}}")
+SELECT `justfunctions.eu.convert_json_to_struct`("{ "time": { "new_value": "17:00","old_value": "16:30" }, "price": { "new_value": "1","old_value": "2" } }")
 ```
 
 **Example Output**:
@@ -703,7 +708,7 @@ SELECT `justfunctions.eu.convert_json_to_struct`("{'time': {'new_value': '17:00'
 
 - **Type**: PROCEDURE
 - **Tags**: operations
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Creates a deduplicated version of the table <table_name>, retaining the latest row based on the <timestamp_column>, and outputs it with the suffix <output_table_suffix>. Arguments <timestamp_column>, <unique_column>, <output_table_suffix> are optional.
 
 ```sql
@@ -773,7 +778,7 @@ your_project.your_dataset.your_table.your_table_dedup
 
 - **Type**: SQL
 - **Tags**: operations
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Generates a DBT schema.yml using the information_schema of the generated tables for the specified <project_id> and <dataset_id>. For this function to work you need to create your own function in your dataset.
 
 ```sql
@@ -819,7 +824,7 @@ models: - name: country_distinct columns: - name: service_country - name: offici
 
 - **Type**: PROCEDURE
 - **Tags**: operations
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Generates a JSON schema for use with JustSQL GPT using the specified <project_id>, <dataset_id>, and list of <tables> (https://chat.openai.com/g/g-hzlGYume7-justsql-for-bigquery).
 
 ```sql
@@ -867,7 +872,7 @@ CALL `justfunctions.eu.generate_justsql_schema`("justfunctions","eu","['date_cal
 
 - **Type**: SQL
 - **Tags**: operations
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: This SQL function returns the greatest (maximum) value among multiple columns in the array <arr>, while properly handling NULL values.
 
 ```sql
@@ -878,20 +883,28 @@ CREATE OR REPLACE FUNCTION `justfunctions.eu.greatest_not_null`(`arr` any type) 
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.greatest_not_null`("['col_1', 'col_2', 'col_3']")
+SELECT `justfunctions.eu.greatest_not_null`("[col_1, col_2, col_3]")
 ```
 
 **Example Output**:
 
 ```
-1
+[5,10,6,1]
+
+| col_1 | col_2 | col_3 | greatest_value |
+|-------|-------|-------|----------------|
+|   5   |   3   |  NULL |        5       |
+|  NULL |   10  |   7   |       10       |
+|   4   |  NULL |   6   |        6       |
+|  NULL |  NULL |   1   |        1       |
+
 ```
 ---
 ## <a id='least_not_null'></a>18. least_not_null(arr)
 
 - **Type**: SQL
 - **Tags**: operations
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: This SQL function returns the least (minimum) value among multiple columns in the array <arr>, while properly handling NULL values.
 
 ```sql
@@ -902,20 +915,28 @@ CREATE OR REPLACE FUNCTION `justfunctions.eu.least_not_null`(`arr` any type)  AS
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.least_not_null`("['col_1', 'col_2', 'col_3']")
+SELECT `justfunctions.eu.least_not_null`("[col_1, col_2, col_3]")
 ```
 
 **Example Output**:
 
 ```
-1
+[3,7,4,1]
+
+| col_1 | col_2 | col_3 | greatest_value |
+|-------|-------|-------|----------------|
+|   5   |   3   |  NULL |        3       |
+|  NULL |   10  |   7   |        7       |
+|   4   |  NULL |   6   |        4       |
+|  NULL |  NULL |   1   |        1       |
+
 ```
 ---
 ## <a id='parse_yaml'></a>19. parse_yaml(string)
 
 - **Type**: JS
 - **Tags**: operations, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts a YAML <string> to JSON format.
 
 ```sql
@@ -930,7 +951,14 @@ CREATE OR REPLACE FUNCTION `justfunctions.eu.parse_yaml`(`string` string) RETURN
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.parse_yaml`("--- updated_at: - 2023-11-12 08:08:25.291779000 Z - 2023-11-12 08:25:18.648572080 Z status: - new - canceled ")
+SELECT `justfunctions.eu.parse_yaml`("---
+ updated_at:
+ - 2023-11-12 08:08:25.291779000 Z
+ - 2023-11-12 08:25:18.648572080 Z
+ status:
+ - new
+ - canceled
+ ")
 ```
 
 **Example Output**:
@@ -943,7 +971,7 @@ SELECT `justfunctions.eu.parse_yaml`("--- updated_at: - 2023-11-12 08:08:25.2917
 
 - **Type**: SQL
 - **Tags**: operations
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Safely compares two values <x> and <y> and returns the lesser of the two while properly handling NULL values.
 
 ```sql
@@ -959,29 +987,78 @@ END
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.safe_least`("1","None")
+SELECT `justfunctions.eu.safe_least`("col_1","col_2")
 ```
 
 **Example Output**:
 
 ```
-1
+[4,3]
+
 ```
 ---
-## <a id='detect_outlier_iqr'></a>21. detect_outlier_iqr(value, value_percentile_25, value_percentile_75)
+## <a id='geometric_mean'></a>21. geometric_mean(col)
+
+- **Type**: AGGREGATE_SQL
+- **Tags**: STATISTICS
+- **Region**: eu
+- **Description**: Finds the geometric mean of a column <value>.
+
+```sql
+CREATE OR REPLACE AGGREGATE FUNCTION `justfunctions.eu.geometric_mean`(`col` float64) 
+  RETURNS float64 AS (EXP(SUM(LN(col))/COUNT(col)))
+  OPTIONS ( description = '''Finds the geometric mean of a column <value>.''')
+```
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.geometric_mean`("col_1")
+```
+
+**Example Output**:
+
+```
+12
+```
+---
+## <a id='median_approx'></a>22. median_approx(col)
+
+- **Type**: AGGREGATE_SQL
+- **Tags**: STATISTICS, percentiles
+- **Region**: eu
+- **Description**: Finds the median of the specified column <col> by calculating approximate quantiles (1% granularity approximation). This approach provides an efficient and fast estimate of the median value.
+
+```sql
+CREATE OR REPLACE AGGREGATE FUNCTION `justfunctions.eu.median_approx`(`col` float64) 
+  RETURNS float64 AS ((APPROX_QUANTILES(col, 100))[OFFSET(50)])
+  OPTIONS ( description = '''Finds the median of the specified column <col> by calculating approximate quantiles (1% granularity approximation). This approach provides an efficient and fast estimate of the median value.''')
+```
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.median_approx`("d")
+```
+
+**Example Output**:
+
+```
+20
+```
+---
+## <a id='outliers_iqr'></a>23. outliers_iqr(col, value_percentile_25, value_percentile_75)
 
 - **Type**: SQL
-- **Tags**: STATISTICS
-- **Region**: us,eu
+- **Tags**: STATISTICS, outliers
+- **Region**: eu
 - **Description**: Detects if a <value> is an outlier based on the IQR method, using the 25th percentile <value_percentile_25> and 75th percentile <value_percentile_75>.
 
 ```sql
-CREATE OR REPLACE FUNCTION `justfunctions.eu.detect_outlier_iqr`(`value` FLOAT64, `value_percentile_25` FLOAT64, `value_percentile_75` FLOAT64) 
+CREATE OR REPLACE FUNCTION `justfunctions.eu.outliers_iqr`(`col` FLOAT64, `value_percentile_25` FLOAT64, `value_percentile_75` FLOAT64) 
   RETURNS INT64 AS (CASE 
 WHEN 
-value < value_percentile_25 - 1.5 * (value_percentile_75 - value_percentile_25) THEN -1
+col < value_percentile_25 - 1.5 * (value_percentile_75 - value_percentile_25) THEN -1
 WHEN 
-value > value_percentile_75 + 1.5 * (value_percentile_75 - value_percentile_25) THEN 1 
+col > value_percentile_75 + 1.5 * (value_percentile_75 - value_percentile_25) THEN 1 
 ELSE 0 
 END
 )
@@ -990,24 +1067,55 @@ END
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.detect_outlier_iqr`("5","2","14")
+SELECT `justfunctions.eu.outliers_iqr`("col","value_percentile_25","value_percentile_75")
 ```
 
 **Example Output**:
 
 ```
-0
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
 ```
 ---
-## <a id='percentile'></a>22. percentile(arr, percentile)
+## <a id='outliers_percentiles'></a>24. outliers_percentiles(col, value_percentile_5, value_percentile_95)
 
 - **Type**: SQL
-- **Tags**: STATISTICS, percentile
-- **Region**: us,eu
+- **Tags**: STATISTICS, outliers
+- **Region**: eu
+- **Description**: Detects if a <value> is an outlier based on then 5th percentile <value_percentile_5> and 95th percentile <value_percentile_95>. Assigns -1 for lower bound outliers, 1 for upper bound outliers, and 0 for non-outliers.
+
+```sql
+CREATE OR REPLACE FUNCTION `justfunctions.eu.outliers_percentiles`(`col` FLOAT64, `value_percentile_5` FLOAT64, `value_percentile_95` FLOAT64) 
+  RETURNS INT64 AS (CASE 
+WHEN 
+col < value_percentile_5 THEN -1
+WHEN 
+col > value_percentile_95 THEN 1 
+ELSE 0 
+END
+)
+  OPTIONS ( description = '''Detects if a <value> is an outlier based on then 5th percentile <value_percentile_5> and 95th percentile <value_percentile_95>. Assigns -1 for lower bound outliers, 1 for upper bound outliers, and 0 for non-outliers.''')
+```
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.outliers_percentiles`("col","value_percentile_5","value_percentile_95")
+```
+
+**Example Output**:
+
+```
+['−1', '−1', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+```
+---
+## <a id='percentiles'></a>25. percentiles(arr, percentile)
+
+- **Type**: SQL
+- **Tags**: STATISTICS, percentiles
+- **Region**: eu
 - **Description**: Finds the specified <percentile> of an array <arr>.
 
 ```sql
-CREATE OR REPLACE FUNCTION `justfunctions.eu.percentile`(`arr` array<float64>, `percentile` int) 
+CREATE OR REPLACE FUNCTION `justfunctions.eu.percentiles`(`arr` array<float64>, `percentile` int) 
   RETURNS float64 AS ((
 SELECT
 COALESCE(arr[SAFE_OFFSET(CAST(ARRAY_LENGTH(arr)*percentile/100 AS INT)-1)],COALESCE(arr[SAFE_OFFSET (0)],999))
@@ -1019,7 +1127,7 @@ FROM (SELECT ARRAY_AGG(x IGNORE NULLS ORDER BY x) AS arr FROM UNNEST(arr) AS x)
 **Example Query**:
 
 ```sql
-SELECT `justfunctions.eu.percentile`("[1.2, 2.3, 3.2, 4.2, 5]")
+SELECT `justfunctions.eu.percentiles`("[1.2, 2.3, 3.2, 4.2, 5]","50")
 ```
 
 **Example Output**:
@@ -1028,11 +1136,59 @@ SELECT `justfunctions.eu.percentile`("[1.2, 2.3, 3.2, 4.2, 5]")
 3.2
 ```
 ---
-## <a id='clean_email'></a>23. clean_email(email)
+## <a id='percentiles_approx'></a>26. percentiles_approx(col, percentile)
+
+- **Type**: AGGREGATE_SQL
+- **Tags**: STATISTICS, percentiles
+- **Region**: eu
+- **Description**: Finds the percentile <percentile> of the specified column <column> by calculating approximate quantiles (1% granularity approximation). This approach provides an efficient and fast estimate of percentiles.
+
+```sql
+CREATE OR REPLACE AGGREGATE FUNCTION `justfunctions.eu.percentiles_approx`(`col` float64, `percentile` int64 NOT AGGREGATE) 
+  RETURNS FLOAT64 AS ((APPROX_QUANTILES(col, 100))[OFFSET(percentile)])
+  OPTIONS ( description = '''Finds the percentile <percentile> of the specified column <column> by calculating approximate quantiles (1% granularity approximation). This approach provides an efficient and fast estimate of percentiles.''')
+```
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.percentiles_approx`("d","50")
+```
+
+**Example Output**:
+
+```
+20
+```
+---
+## <a id='weighted_average'></a>27. weighted_average(col, weight)
+
+- **Type**: AGGREGATE_SQL
+- **Tags**: STATISTICS
+- **Region**: eu
+- **Description**: Finds the weighted average of a column <value>.
+
+```sql
+CREATE OR REPLACE AGGREGATE FUNCTION `justfunctions.eu.weighted_average`(`col` float64, `weight` float64) 
+  RETURNS float64 AS (sum(col * weight) / sum(weight))
+  OPTIONS ( description = '''Finds the weighted average of a column <value>.''')
+```
+**Example Query**:
+
+```sql
+SELECT `justfunctions.eu.weighted_average`("g","w")
+```
+
+**Example Output**:
+
+```
+12
+```
+---
+## <a id='clean_email'></a>28. clean_email(email)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts an <email> address to lowercase and removes any sub-address (also known as plus addressing).
 
 ```sql
@@ -1052,11 +1208,11 @@ SELECT `justfunctions.eu.clean_email`("HeLLo+other@gmail.com")
 hello@gmail.com
 ```
 ---
-## <a id='clean_special_symbols'></a>24. clean_special_symbols(string)
+## <a id='clean_special_symbols'></a>29. clean_special_symbols(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Cleans special symbols in a <string> using custom symbols.
 
 ```sql
@@ -1076,11 +1232,11 @@ SELECT `justfunctions.eu.clean_special_symbols`("Vacation✈️ time!🌴😀�
 vacation time
 ```
 ---
-## <a id='clean_special_symbols_custom'></a>25. clean_special_symbols_custom(string)
+## <a id='clean_special_symbols_custom'></a>30. clean_special_symbols_custom(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Cleans special symbols in a <string> using custom symbols.
 
 ```sql
@@ -1100,11 +1256,11 @@ SELECT `justfunctions.eu.clean_special_symbols_custom`("Vacation✈️ time!🌴
 vacation time
 ```
 ---
-## <a id='clean_url'></a>26. clean_url(url)
+## <a id='clean_url'></a>31. clean_url(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Removes http://, ftp://, https://, the URL tail, and the last URL slash from a <url>.
 
 ```sql
@@ -1124,11 +1280,11 @@ SELECT `justfunctions.eu.clean_url`("https://hey.com/me/?231#213")
 hey.com/me
 ```
 ---
-## <a id='decode_url'></a>27. decode_url(url)
+## <a id='decode_url'></a>32. decode_url(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Decodes a <url>.
 
 ```sql
@@ -1156,11 +1312,11 @@ SELECT `justfunctions.eu.decode_url`("https%3A%2F%2Fjustdataplease.com%2Fjustfun
 https://justdataplease.com/justfunctions-bigquery/?utm_campaign=test
 ```
 ---
-## <a id='dedup_chars'></a>28. dedup_chars(string)
+## <a id='dedup_chars'></a>33. dedup_chars(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Deduplicates characters in a <string>.
 
 ```sql
@@ -1189,11 +1345,11 @@ SELECT `justfunctions.eu.dedup_chars`("Helloooo!")
 Helo!
 ```
 ---
-## <a id='detect_department_email'></a>29. detect_department_email(email)
+## <a id='detect_department_email'></a>34. detect_department_email(email)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Detects if an <email> belongs to a business department (e.g., sales, HR, support).
 
 ```sql
@@ -1235,11 +1391,11 @@ SELECT `justfunctions.eu.detect_department_email`("sales@dev.io")
 1
 ```
 ---
-## <a id='detect_free_email'></a>30. detect_free_email(email)
+## <a id='detect_free_email'></a>35. detect_free_email(email)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Detects if an <email> belongs to a free email service (e.g., Gmail, Yahoo, Outlook).
 
 ```sql
@@ -1261,11 +1417,11 @@ SELECT `justfunctions.eu.detect_free_email`("jason@gmail.com")
 1
 ```
 ---
-## <a id='detect_free_email_domain'></a>31. detect_free_email_domain(email_domain)
+## <a id='detect_free_email_domain'></a>36. detect_free_email_domain(email_domain)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Detects if an <email_domain> belongs to a free email service (e.g., Gmail, Yahoo, Outlook).
 
 ```sql
@@ -1285,11 +1441,11 @@ SELECT `justfunctions.eu.detect_free_email_domain`("gmail")
 1
 ```
 ---
-## <a id='detect_useragent_device_type'></a>32. detect_useragent_device_type(useragent)
+## <a id='detect_useragent_device_type'></a>37. detect_useragent_device_type(useragent)
 
 - **Type**: SQL
 - **Tags**: text, useragent
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Detects the device type from a <useragent> string. It can be a tablet, mobile, PC, TV, or other.
 
 ```sql
@@ -1317,11 +1473,11 @@ SELECT `justfunctions.eu.detect_useragent_device_type`("Mozilla/5.0 (iPad; CPU O
 tablet
 ```
 ---
-## <a id='extract_all_url_parameters'></a>33. extract_all_url_parameters(url)
+## <a id='extract_all_url_parameters'></a>38. extract_all_url_parameters(url)
 
 - **Type**: JS
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts all parameters from a <url> in JSON format.
 
 ```sql
@@ -1352,11 +1508,11 @@ SELECT `justfunctions.eu.extract_all_url_parameters`("justdataplease.com/test/?m
 {"keyword":"hey","medium":"cpc","source":"facebook"}
 ```
 ---
-## <a id='extract_email_domain'></a>34. extract_email_domain(url)
+## <a id='extract_email_domain'></a>39. extract_email_domain(url)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the domain from an <email>.
 
 ```sql
@@ -1376,11 +1532,11 @@ SELECT `justfunctions.eu.extract_email_domain`("jason@justdataplease.com")
 justdataplease.com
 ```
 ---
-## <a id='extract_email_domain_base'></a>35. extract_email_domain_base(url)
+## <a id='extract_email_domain_base'></a>40. extract_email_domain_base(url)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the base domain from an <email>.
 
 ```sql
@@ -1400,11 +1556,11 @@ SELECT `justfunctions.eu.extract_email_domain_base`("jason@justdataplease.com")
 justdataplease
 ```
 ---
-## <a id='extract_url_domain'></a>36. extract_url_domain(url)
+## <a id='extract_url_domain'></a>41. extract_url_domain(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the domain from a <url>.
 
 ```sql
@@ -1424,11 +1580,11 @@ SELECT `justfunctions.eu.extract_url_domain`("https://hey.com/me/?231#213")
 hey.com
 ```
 ---
-## <a id='extract_url_domain_base'></a>37. extract_url_domain_base(url)
+## <a id='extract_url_domain_base'></a>42. extract_url_domain_base(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the base domain from a <url>.
 
 ```sql
@@ -1448,11 +1604,11 @@ SELECT `justfunctions.eu.extract_url_domain_base`("https://hey.com/me/?231#213")
 hey
 ```
 ---
-## <a id='extract_url_language'></a>38. extract_url_language(url)
+## <a id='extract_url_language'></a>43. extract_url_language(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the language from a <url>.
 
 ```sql
@@ -1523,11 +1679,11 @@ SELECT `justfunctions.eu.extract_url_language`("www.justdataplease.com/en-US/")
 english
 ```
 ---
-## <a id='extract_url_parameter'></a>39. extract_url_parameter(url, parameter)
+## <a id='extract_url_parameter'></a>44. extract_url_parameter(url, parameter)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the value of a specified <parameter> from a <url>.
 
 ```sql
@@ -1547,11 +1703,11 @@ SELECT `justfunctions.eu.extract_url_parameter`("www.google.com?medium=cpc&sourc
 facebook
 ```
 ---
-## <a id='extract_url_path'></a>40. extract_url_path(url, clean_url_tail)
+## <a id='extract_url_path'></a>45. extract_url_path(url, clean_url_tail)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the URL path from a <url>, optionally removing the URL tail.
 
 ```sql
@@ -1575,11 +1731,11 @@ SELECT `justfunctions.eu.extract_url_path`("https://hey.com/me/?parameter=1","Tr
 /me/
 ```
 ---
-## <a id='extract_url_prefix'></a>41. extract_url_prefix(url)
+## <a id='extract_url_prefix'></a>46. extract_url_prefix(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the URL prefix from a <url>.
 
 ```sql
@@ -1599,11 +1755,11 @@ SELECT `justfunctions.eu.extract_url_prefix`("https://en.hey.com/me/?231#213")
 en
 ```
 ---
-## <a id='extract_url_suffix'></a>42. extract_url_suffix(url)
+## <a id='extract_url_suffix'></a>47. extract_url_suffix(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the URL suffix from a <url>.
 
 ```sql
@@ -1623,11 +1779,11 @@ SELECT `justfunctions.eu.extract_url_suffix`("https://en.hey.com/me/?231#213")
 com
 ```
 ---
-## <a id='extract_url_tail'></a>43. extract_url_tail(url)
+## <a id='extract_url_tail'></a>48. extract_url_tail(url)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Extracts the URL tail from a <url>.
 
 ```sql
@@ -1647,11 +1803,11 @@ SELECT `justfunctions.eu.extract_url_tail`("https://hey.com/me/?parameter=1")
 parameter=1
 ```
 ---
-## <a id='fuzzy_distance_dam'></a>44. fuzzy_distance_dam(string_1, string_2)
+## <a id='fuzzy_distance_dam'></a>49. fuzzy_distance_dam(string_1, string_2)
 
 - **Type**: JS
 - **Tags**: text, similarity
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Calculates Damerau-Levenshtein distance between <string_1> and <string_2>.
 
 ```sql
@@ -1717,11 +1873,11 @@ SELECT `justfunctions.eu.fuzzy_distance_dam`("pyhtno","python")
 2
 ```
 ---
-## <a id='fuzzy_distance_leven'></a>45. fuzzy_distance_leven(string_1, string_2)
+## <a id='fuzzy_distance_leven'></a>50. fuzzy_distance_leven(string_1, string_2)
 
 - **Type**: JS
 - **Tags**: text, similarity
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Calculates Levenshtein distance between <string_1> and <string_2>.
 
 ```sql
@@ -1740,11 +1896,11 @@ SELECT `justfunctions.eu.fuzzy_distance_leven`("pyhtno","python")
 3
 ```
 ---
-## <a id='fuzzy_nysiis'></a>46. fuzzy_nysiis(string)
+## <a id='fuzzy_nysiis'></a>51. fuzzy_nysiis(string)
 
 - **Type**: SQL
 - **Tags**: text, similarity
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Calculates NYSIIS code for <string>.
 
 ```sql
@@ -1825,11 +1981,11 @@ SELECT `justfunctions.eu.fuzzy_nysiis`("python")
 pytan
 ```
 ---
-## <a id='normalize_text'></a>47. normalize_text(string)
+## <a id='normalize_text'></a>52. normalize_text(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Normalizes a given <string> by converting it to lowercase, applying transliteration, and removing special symbols.
 
 ```sql
@@ -1859,11 +2015,11 @@ SELECT `justfunctions.eu.normalize_text`("🎉 Welcome to Athens in 2023! Καλ
 welcome to athens in 2023
 ```
 ---
-## <a id='parse_useragent'></a>48. parse_useragent(useragent)
+## <a id='parse_useragent'></a>53. parse_useragent(useragent)
 
 - **Type**: JS
 - **Tags**: text, useragent
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Parses the details from a <useragent> string.
 
 ```sql
@@ -1903,11 +2059,11 @@ arch : null
 
 ```
 ---
-## <a id='remove_accents'></a>49. remove_accents(string)
+## <a id='remove_accents'></a>54. remove_accents(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Removes accents from a <string>.
 
 ```sql
@@ -1927,11 +2083,11 @@ SELECT `justfunctions.eu.remove_accents`("¿Dóndé Éstá Mí Ágúá?")
 ¿Donde Esta Mi Agua?
 ```
 ---
-## <a id='remove_email_plus_address'></a>50. remove_email_plus_address(email)
+## <a id='remove_email_plus_address'></a>55. remove_email_plus_address(email)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**:  any sub-address (also known as plus addressing) from an <email> address.
 
 ```sql
@@ -1951,11 +2107,11 @@ SELECT `justfunctions.eu.remove_email_plus_address`("hey+other@gmail.com")
 hey@gmail.com
 ```
 ---
-## <a id='remove_en_stopwords'></a>51. remove_en_stopwords(string)
+## <a id='remove_en_stopwords'></a>56. remove_en_stopwords(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Removes English stopwords from a <string>.
 
 ```sql
@@ -1975,11 +2131,11 @@ SELECT `justfunctions.eu.remove_en_stopwords`("The query in the database is retu
 query   database  returning  rows   specified column values.
 ```
 ---
-## <a id='remove_extra_spaces'></a>52. remove_extra_spaces(string)
+## <a id='remove_extra_spaces'></a>57. remove_extra_spaces(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Removes extra spaces (tab, space, newline, paragraph, etc.) in a <string>.
 
 ```sql
@@ -2000,11 +2156,11 @@ SELECT `justfunctions.eu.remove_extra_spaces`("\tHi     there
 Hi there.
 ```
 ---
-## <a id='remove_extra_whitespaces'></a>53. remove_extra_whitespaces(string)
+## <a id='remove_extra_whitespaces'></a>58. remove_extra_whitespaces(string)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Removes extra whitespaces in a <string>.
 
 ```sql
@@ -2026,11 +2182,11 @@ Hi there
 .
 ```
 ---
-## <a id='replace_en_contractions'></a>54. replace_en_contractions(string, replacement)
+## <a id='replace_en_contractions'></a>59. replace_en_contractions(string, replacement)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Replaces English contractions in a <string> with the specified <replacement>.
 
 ```sql
@@ -2283,11 +2439,11 @@ SELECT `justfunctions.eu.replace_en_contractions`("I'll be great tmr thx","r"\s+
 I will be great tomorrow thanks
 ```
 ---
-## <a id='replace_html_tags'></a>55. replace_html_tags(string, replacement)
+## <a id='replace_html_tags'></a>60. replace_html_tags(string, replacement)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Replaces HTML tags in a <string> with the specified <replacement>.
 
 ```sql
@@ -2307,11 +2463,11 @@ SELECT `justfunctions.eu.replace_html_tags`("<div class=\'test\'>hello world<a h
 hello world hello world
 ```
 ---
-## <a id='replace_urls'></a>56. replace_urls(string, replacement)
+## <a id='replace_urls'></a>61. replace_urls(string, replacement)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Replaces URL patterns in a <string> with the specified <replacement>.
 
 ```sql
@@ -2331,11 +2487,11 @@ SELECT `justfunctions.eu.replace_urls`("Google it https://www.google.com/ !","")
 Google it !
 ```
 ---
-## <a id='split_url'></a>57. split_url(url, part)
+## <a id='split_url'></a>62. split_url(url, part)
 
 - **Type**: SQL
 - **Tags**: text, url
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Splits a <url> into parts using the '/' symbol.
 
 ```sql
@@ -2360,11 +2516,11 @@ SELECT `justfunctions.eu.split_url`("hey.com/me/?231#213","2")
 me
 ```
 ---
-## <a id='stemmer_greek'></a>58. stemmer_greek(string)
+## <a id='stemmer_greek'></a>63. stemmer_greek(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, stemmer
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Returns the stem of a <string>. Supports the Greek language.
 
 ```sql
@@ -2383,11 +2539,11 @@ SELECT `justfunctions.eu.stemmer_greek`("καλησπερα")
 ΚΑΛΗΣΠΕΡ
 ```
 ---
-## <a id='stemmer_lancaster'></a>59. stemmer_lancaster(string)
+## <a id='stemmer_lancaster'></a>64. stemmer_lancaster(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, stemmer
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Returns the stem of a <string> using the Lancaster algorithm. Supports the English language.
 
 ```sql
@@ -2406,11 +2562,11 @@ SELECT `justfunctions.eu.stemmer_lancaster`("replied")
 reply
 ```
 ---
-## <a id='stemmer_porter'></a>60. stemmer_porter(string)
+## <a id='stemmer_porter'></a>65. stemmer_porter(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, stemmer
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Returns the stem of a <string> using the Porter algorithm. Supports the English language.
 
 ```sql
@@ -2429,11 +2585,11 @@ SELECT `justfunctions.eu.stemmer_porter`("replied")
 repli
 ```
 ---
-## <a id='surrogate_key'></a>61. surrogate_key(string)
+## <a id='surrogate_key'></a>66. surrogate_key(string)
 
 - **Type**: SQL
-- **Tags**: text, surrogate key
-- **Region**: us,eu
+- **Tags**: text, operations
+- **Region**: eu
 - **Description**: Creates a hashed value of multiple field <string>. Use CONCAT to create <string> to include multiple fields.
 
 ```sql
@@ -2453,11 +2609,11 @@ SELECT `justfunctions.eu.surrogate_key`("python")
 2065202487608477923
 ```
 ---
-## <a id='surrogate_key_str'></a>62. surrogate_key_str(string)
+## <a id='surrogate_key_str'></a>67. surrogate_key_str(string)
 
 - **Type**: SQL
-- **Tags**: text, surrogate key
-- **Region**: us,eu
+- **Tags**: text, operations
+- **Region**: eu
 - **Description**: Creates a hashed value of multiple field <string>. Use CONCAT to create <string> to include multiple fields.
 
 ```sql
@@ -2477,11 +2633,11 @@ SELECT `justfunctions.eu.surrogate_key_str`("python")
 2065202487608477923
 ```
 ---
-## <a id='transliterate_anyascii'></a>63. transliterate_anyascii(string)
+## <a id='transliterate_anyascii'></a>68. transliterate_anyascii(string)
 
 - **Type**: JS
 - **Tags**: NLP, text, transliteration
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Converts Unicode characters in a <string> to their best ASCII representation.
 
 ```sql
@@ -2505,11 +2661,11 @@ SELECT `justfunctions.eu.transliterate_anyascii`("καλημέρα")
 kalimera
 ```
 ---
-## <a id='validate_email'></a>64. validate_email(email)
+## <a id='validate_email'></a>69. validate_email(email)
 
 - **Type**: SQL
 - **Tags**: text, email
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Validates if an <email> address is properly formatted.
 
 ```sql
@@ -2534,11 +2690,11 @@ SELECT `justfunctions.eu.validate_email`("12/jason@gmail.com")
 0
 ```
 ---
-## <a id='word_distance'></a>65. word_distance(string_1, string_2)
+## <a id='word_distance'></a>70. word_distance(string_1, string_2)
 
 - **Type**: JS
 - **Tags**: text, similarity
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Calculates Levenshtein distance between <string_1> and <string_2>.
 
 ```sql
@@ -2557,11 +2713,11 @@ SELECT `justfunctions.eu.word_distance`("python","pithon")
 1
 ```
 ---
-## <a id='word_tokens'></a>66. word_tokens(string, symbol)
+## <a id='word_tokens'></a>71. word_tokens(string, symbol)
 
 - **Type**: SQL
 - **Tags**: NLP, text
-- **Region**: us,eu
+- **Region**: eu
 - **Description**: Splits a <string> into words using the specified <symbol>.
 
 ```sql

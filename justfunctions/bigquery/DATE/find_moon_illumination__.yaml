@@ -16,7 +16,7 @@ output:
 examples:
   - description: ""
     arguments:
-      - "2090-01-16"
+      - 2090-01-16
     output: 99.17
     region: ALL
 code: |

@@ -1,7 +1,7 @@
 type: function_sql
 category:
   - text
-  - surrogate key
+  - operations
 tutorial: https://cloud.google.com/bigquery/docs/reference/standard-sql/hash_functions#farm_fingerprint
 source: https://github.com/google/farmhash
 github:

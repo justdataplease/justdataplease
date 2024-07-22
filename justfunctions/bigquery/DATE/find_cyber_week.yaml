@@ -16,7 +16,7 @@ output:
 examples:
   - description: ""
     arguments:
-      - 2023-11-24
+      - '2023-11-24'
     output: 1 | Black Friday
     region: ALL
 code: |
